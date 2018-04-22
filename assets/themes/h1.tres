@@ -1,0 +1,14 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://assets/fonts/Marapfhont.ttf" type="DynamicFontData" id=1]
+
+[resource]
+
+size = 100
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -10
+extra_spacing_bottom = -12
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
