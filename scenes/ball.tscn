@@ -63,21 +63,21 @@ distance_fade_enable = false
 
 radius = 1.0
 
-[node name="ball" type="RigidBody"]
+[node name="ball" type="RigidBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 4.0
-friction = 1.0
-bounce = 1.0
+mass = 0.5
+friction = 0.5
+bounce = 0.5
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = false
 contacts_reported = 0
-contact_monitor = false
+contact_monitor = true
 sleeping = false
 can_sleep = true
 axis_lock_linear_x = false

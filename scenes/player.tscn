@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/player.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -20,8 +22,8 @@ flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
+params_diffuse_mode = 1
+params_specular_mode = 2
 params_blend_mode = 0
 params_cull_mode = 0
 params_depth_draw_mode = 0
@@ -30,8 +32,8 @@ params_point_size = 1.0
 params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 0.993011, 0.105469, 1, 1 )
-metallic = 0.5
+albedo_color = Color( 0.992187, 0, 1, 1 )
+metallic = 1.0
 metallic_specular = 1.0
 metallic_texture_channel = 0
 roughness = 0.0
@@ -57,7 +59,7 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Albedo", "Metallic" ]
+_sections_unfolded = [ "Albedo", "Flags", "Metallic", "Parameters" ]
 
 [sub_resource type="CapsuleShape" id=3]
 
@@ -66,20 +68,20 @@ height = 1.0
 
 [node name="player" type="RigidBody"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 50.0
-friction = 1.0
+mass = 10.0
+friction = 0.5
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 5.0
 custom_integrator = false
 continuous_cd = false
 contacts_reported = 0
-contact_monitor = false
+contact_monitor = true
 sleeping = false
 can_sleep = true
 axis_lock_linear_x = false
@@ -92,7 +94,9 @@ linear_velocity = Vector3( 0, 0, 0 )
 linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
+script = ExtResource( 1 )
 _sections_unfolded = [ "Axis Lock", "Transform", "material" ]
+player_id = 1
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
