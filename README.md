@@ -1,13 +1,42 @@
 # Paradise Volley
-A spiritual succesor to the Blobby Volley 2
-
 ![Title screen](https://i.imgur.com/rCWFMoK.png)
 
-# Tech
-
-- GodotEngine 3
-- Gimp
-- Wings3D
-
-
 ![GodotEngine screen](https://i.imgur.com/znD9COR.png)
+
+A spiritual succesor to the Blobby Volley 2
+Game page: [itch.io/paradise-valley](https://w84death.itch.io/paradise-valley)
+
+GAME IS NOT FINISHED. NOR IN ANY PLAYABLE STATE.
+At this point it's a tech demo.
+
+TEST RIG:
+I tested this in Latest GodotEngine from Steam on this machine:
+
+    Intel® Core™ i3-7100 CPU @ 3.90GHz × 4
+    GeForce GTX 1050/PCIe/SSE2
+    2x 4GB
+    slow SSD
+    Linux POP!_OS (based on->Ubuntu->Debian)
+
+DEVLOG:
+
+    0.5
+        some physics
+        glorious 640x480 resolution
+    0.4
+        more details (grass/flowers)
+        tweaked graphics settings
+        target 60fps
+    0.3
+        tweaked graphics
+        players models
+        ball model
+        net between players
+        finished island
+    0.2
+        island
+        game scene
+    0.1
+        main menu
+        intro scene
+        project initial stuff
