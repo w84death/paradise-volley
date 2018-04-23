@@ -8,10 +8,10 @@ path.etc2="res://.import/splatmap-512.png-7f8283c095bcc2d3fb170e2ea2f4ddfd.etc2.
 [deps]
 
 source_file="res://assets/tex/splatmap-512.png"
-source_md5="9a44885e9a7c37a7e95580ac200afbd2"
+source_md5="d6f9d005b9a07229e29a8131ccc58e47"
 
 dest_files=[ "res://.import/splatmap-512.png-7f8283c095bcc2d3fb170e2ea2f4ddfd.s3tc.stex", "res://.import/splatmap-512.png-7f8283c095bcc2d3fb170e2ea2f4ddfd.etc2.stex" ]
-dest_md5="a941007589271f86138d21e4cf716e3d"
+dest_md5="423de080558e64756dc7f6d1c916c4db"
 
 [params]
 

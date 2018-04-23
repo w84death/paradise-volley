@@ -7,7 +7,7 @@
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 32
+size = 50
 use_mipmaps = true
 use_filter = true
 extra_spacing_char = 2
