@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/fps.gd" type="Script" id=3]
 
-[node name="p1x" type="Control"]
+[node name="p1x" type="Control" index="0"]
 
 anchor_left = 1.0
 anchor_top = 1.0
@@ -21,7 +21,7 @@ size_flags_vertical = 1
 
 [node name="logo" type="Sprite" parent="." index="0"]
 
-position = Vector2( 15, -36 )
+position = Vector2( 15, -35 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -34,7 +34,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -2.0
 margin_top = -24.0
-margin_right = 30.0
+margin_right = 35.0
 margin_bottom = 36.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -43,7 +43,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 2 )
-text = "123"
+text = "060"
 align = 2
 valign = 2
 percent_visible = 1.0
