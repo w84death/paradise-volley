@@ -23,7 +23,6 @@ settings/fps/force_fps=60
 [display]
 
 window/size/width=800
-window/size/height=480
 window/handheld/emulate_touchscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
@@ -31,6 +30,7 @@ window/stretch/aspect="keep"
 [rendering]
 
 quality/filters/use_nearest_mipmap_filter=true
+quality/filters/anisotropic_filter_level=2
 quality/shadow_atlas/quadrant_0_subdiv=2
 quality/shadow_atlas/quadrant_1_subdiv=3
 quality/shadows/filter_mode=2
@@ -41,5 +41,5 @@ quality/voxel_cone_tracing/high_quality=false
 environment/default_clear_color=Color( 0.511719, 0.977112, 1, 1 )
 quality/reflections/atlas_size=1024
 quality/reflections/atlas_subdiv=4
-quality/filters/msaa=3
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"
