@@ -1,13 +1,14 @@
 # Paradise Volley
 ![Title screen](https://img.itch.zone/aW1nLzExODg1NTIucG5n/original/2O8J2T.png)
 
-A spiritual succesor to the Blobby Volley 2
-Game page: [itch.io/paradise-valley](https://w84death.itch.io/paradise-valley)
+## A spiritual succesor to the Blobby Volley 2
 
-GAME IS NOT FINISHED. NOR IN ANY PLAYABLE STATE.
+Get the game at [itch.io/paradise-valley](https://w84death.itch.io/paradise-valley)
+
+## GAME IS NOT FINISHED. NOR IN ANY PLAYABLE STATE.
 At this point it's a tech demo.
 
-TEST RIG:
+## TEST RIG:
 I tested this in Latest GodotEngine from Steam on this machine:
 
     Intel® Core™ i3-7100 CPU @ 3.90GHz × 4
@@ -16,7 +17,7 @@ I tested this in Latest GodotEngine from Steam on this machine:
     slow SSD
     Linux POP!_OS (based on->Ubuntu->Debian)
 
-DEVLOG:
+## DEVLOG:
 
     0.5
         some physics
