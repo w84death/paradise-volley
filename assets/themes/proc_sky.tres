@@ -2,8 +2,8 @@
 
 [resource]
 
-radiance_size = 6
-sky_top_color = Color( 0.351562, 0.924011, 1, 1 )
+radiance_size = 1
+sky_top_color = Color( 1, 0.947449, 0.519531, 1 )
 sky_horizon_color = Color( 1, 1, 1, 1 )
 sky_curve = 0.098073
 sky_energy = 1.0
@@ -11,13 +11,13 @@ ground_bottom_color = Color( 1, 1, 1, 1 )
 ground_horizon_color = Color( 1, 1, 1, 1 )
 ground_curve = 0.01
 ground_energy = 1.0
-sun_color = Color( 1, 0.992523, 0.808594, 1 )
+sun_color = Color( 1, 1, 1, 1 )
 sun_latitude = 40.0
 sun_longitude = 140.0
 sun_angle_min = 1.0
 sun_angle_max = 100.0
 sun_curve = 0.05
 sun_energy = 1.0
-texture_size = 2
+texture_size = 0
 _sections_unfolded = [ "Ground", "Sky", "Sun", "Texture" ]
 
