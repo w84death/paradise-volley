@@ -1,7 +1,5 @@
 # Paradise Volley
-![Title screen](https://i.imgur.com/rCWFMoK.png)
-
-![GodotEngine screen](https://i.imgur.com/znD9COR.png)
+![Title screen](https://img.itch.zone/aW1nLzExODg1NTIucG5n/original/2O8J2T.png)
 
 A spiritual succesor to the Blobby Volley 2
 Game page: [itch.io/paradise-valley](https://w84death.itch.io/paradise-valley)
