@@ -63,7 +63,7 @@ distance_fade_enable = false
 
 radius = 1.0
 
-[node name="ball" type="RigidBody" index="0"]
+[node name="ball" type="RigidBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/marque.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/themes/h1.theme" type="Theme" id=3]
 [ext_resource path="res://scripts/menu.vs" type="Script" id=4]
 [ext_resource path="res://scenes/menu_background_world.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/corners.tscn" type="PackedScene" id=6]
 
 [node name="main_menu" type="Control"]
 
@@ -249,6 +250,8 @@ flat = false
 align = 1
 
 [node name="Spatial" parent="." index="3" instance=ExtResource( 5 )]
+
+[node name="corners" parent="." index="4" instance=ExtResource( 6 )]
 
 [connection signal="pressed" from="bottom/Panel/menu/single" to="bottom/Panel/menu" method="_on_single_pressed"]
 
