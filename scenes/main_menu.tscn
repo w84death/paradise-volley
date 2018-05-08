@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=1]
-[ext_resource path="res://scenes/marque.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/themes/h1.theme" type="Theme" id=3]
-[ext_resource path="res://scripts/menu.vs" type="Script" id=4]
-[ext_resource path="res://scenes/menu_background_world.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/corners.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
+[ext_resource path="res://levels/menu_background_world.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/marque.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/themes/h1.theme" type="Theme" id=5]
+[ext_resource path="res://scripts/menu.vs" type="Script" id=6]
+[ext_resource path="res://scenes/corners.tscn" type="PackedScene" id=7]
 
-[node name="main_menu" type="Control"]
+[node name="main_menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -20,20 +21,49 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Theme" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="marque" parent="." index="0" instance=ExtResource( 2 )]
+[node name="menu_background" parent="." index="0" instance=ExtResource( 3 )]
 
-anchor_top = 0.0
-anchor_bottom = 0.0
-margin_top = 0.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 0, 64 )
+editor/display_folded = true
 
-[node name="logo" type="CenterContainer" parent="." index="1"]
+[node name="marque" parent="." index="1" instance=ExtResource( 4 )]
+
+margin_top = 60.0
+margin_bottom = 124.0
+
+[node name="credits" type="Label" parent="marque" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -131.0
+margin_top = -92.0
+margin_right = 131.0
+margin_bottom = -32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 2
+text = "2018 KJ/P1X, VERSION 0.8"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "Visibility", "custom_colors", "custom_constants" ]
+
+[node name="logo" type="CenterContainer" parent="." index="2"]
 
 anchor_left = 0.5
 anchor_top = 0.5
@@ -71,13 +101,13 @@ size_flags_vertical = 1
 
 [node name="title" type="Label" parent="logo/labels" index="0"]
 
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = -147.0
 margin_top = -48.0
-margin_right = 146.0
+margin_right = 129.0
 margin_bottom = 48.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -85,7 +115,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 3 )
+theme = ExtResource( 5 )
 text = "PARADISE VOLLEY"
 align = 1
 valign = 1
@@ -94,32 +124,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme" ]
 
-[node name="credits" type="Label" parent="logo/labels" index="1"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -131.0
-margin_top = 34.0
-margin_right = 131.0
-margin_bottom = 94.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "2018 KJ/P1X, VERSION 0.5"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Theme", "custom_colors" ]
-
-[node name="bottom" type="CenterContainer" parent="." index="2"]
+[node name="bottom" type="CenterContainer" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -143,9 +148,10 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 64.0
+margin_top = 16.0
 margin_right = 576.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 512, 128 )
+margin_bottom = 112.0
+rect_min_size = Vector2( 512, 96 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -161,9 +167,9 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 32.0
-margin_top = 32.0
+margin_top = 16.0
 margin_right = -32.0
-margin_bottom = -32.0
+margin_bottom = -16.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -172,7 +178,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 40
 alignment = 1
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
 
 [node name="single" type="Button" parent="bottom/Panel/menu" index="0"]
@@ -181,8 +187,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 38.0
-margin_right = 175.0
+margin_left = 20.0
+margin_right = 100.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -195,18 +201,43 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "SINGLE MATCH"
+text = "SPARING"
 flat = false
 align = 1
 
-[node name="turnament" type="Button" parent="bottom/Panel/menu" index="1"]
+[node name="demo" type="Button" parent="bottom/Panel/menu" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 215.0
-margin_right = 328.0
+margin_left = 140.0
+margin_right = 192.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "DEMO"
+flat = false
+align = 1
+
+[node name="turnament" type="Button" parent="bottom/Panel/menu" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 232.0
+margin_right = 345.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -216,6 +247,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/hseparation = 0
+disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -225,14 +257,14 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_constants" ]
 
-[node name="quit" type="Button" parent="bottom/Panel/menu" index="2"]
+[node name="quit" type="Button" parent="bottom/Panel/menu" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 368.0
-margin_right = 410.0
+margin_left = 385.0
+margin_right = 427.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -249,11 +281,11 @@ text = "QUIT"
 flat = false
 align = 1
 
-[node name="Spatial" parent="." index="3" instance=ExtResource( 5 )]
-
-[node name="corners" parent="." index="4" instance=ExtResource( 6 )]
+[node name="corners" parent="." index="4" instance=ExtResource( 7 )]
 
 [connection signal="pressed" from="bottom/Panel/menu/single" to="bottom/Panel/menu" method="_on_single_pressed"]
+
+[connection signal="pressed" from="bottom/Panel/menu/demo" to="bottom/Panel/menu" method="_on_demo_pressed"]
 
 [connection signal="pressed" from="bottom/Panel/menu/quit" to="bottom/Panel/menu" method="_on_quit_pressed"]
 

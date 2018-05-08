@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/anim.vs" type="Script" id=1]
-[ext_resource path="res://assets/tex/rocks-512.png" type="Texture" id=2]
+[ext_resource path="res://assets/tex/palm_bark.png" type="Texture" id=2]
 [ext_resource path="res://assets/models/palm.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://assets/tex/tree_auv.png" type="Texture" id=4]
 
@@ -36,7 +36,7 @@ params_point_size = 1.0
 params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 0.890625, 0.40139, 0.107849, 1 )
+albedo_color = Color( 1, 1, 1, 1 )
 albedo_texture = ExtResource( 2 )
 metallic = 0.0
 metallic_specular = 0.5
@@ -54,7 +54,7 @@ subsurf_scatter_enabled = false
 transmission_enabled = false
 refraction_enabled = false
 detail_enabled = false
-uv1_scale = Vector3( 1, 6, 1 )
+uv1_scale = Vector3( 2, 3, 1 )
 uv1_offset = Vector3( 0, 0, 0 )
 uv1_triplanar = false
 uv1_triplanar_sharpness = 1.0
@@ -210,7 +210,7 @@ tracks/6/keys = {
 "values": [ Vector3( 0, 0, 3.99675 ), Vector3( -2.07514, -0.074272, 1.17971 ), Vector3( -2.07514, -0.074272, 1.17971 ) ]
 }
 
-[node name="palm" type="Spatial"]
+[node name="palm" type="Spatial" index="0"]
 
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 script = ExtResource( 1 )

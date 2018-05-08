@@ -18,7 +18,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 default_font = SubResource( 1 )
 Button/colors/font_color = Color( 1, 1, 1, 1 )
-Button/colors/font_color_disabled = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 1, 1, 1, 0.25098 )
 Button/colors/font_color_hover = Color( 0, 1, 0.835938, 1 )
 Button/colors/font_color_pressed = Color( 0, 0.542969, 0.453539, 1 )
 Button/constants/hseparation = 2

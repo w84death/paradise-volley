@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/cort.gd" type="Script" id=1]
+
+[sub_resource type="PlaneShape" id=1]
+
+plane = Plane( 0, 1, 0, 0 )
+
+[sub_resource type="PlaneShape" id=2]
+
+plane = Plane( 0, 1, 0, 0 )
+
+[sub_resource type="PlaneShape" id=3]
+
+plane = Plane( 0, 1, 0, 0 )
+
+[sub_resource type="PlaneShape" id=4]
+
+plane = Plane( 0, 1, 0, 0 )
+
+[sub_resource type="PlaneShape" id=5]
+
+plane = Plane( 0, 1, 0, 0 )
+
+[node name="cort" type="Spatial" index="0"]
+
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="floor_left" type="StaticBody" parent="." index="0"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0 )
+input_ray_pickable = true
+input_capture_on_drag = true
+collision_layer = 4
+collision_mask = 3
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+type = 3
+
+[node name="left" type="CollisionShape" parent="floor_left" index="0"]
+
+shape = SubResource( 1 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="floor_right" type="StaticBody" parent="." index="1"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0 )
+input_ray_pickable = true
+input_capture_on_drag = true
+collision_layer = 4
+collision_mask = 3
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+type = 2
+
+[node name="right" type="CollisionShape" parent="floor_right" index="0"]
+
+shape = SubResource( 2 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="walls" type="StaticBody" parent="." index="2"]
+
+editor/display_folded = true
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 8192
+collision_mask = 3
+friction = 0.7
+bounce = 0.2
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+type = 4
+
+[node name="wall2" type="CollisionShape" parent="walls" index="0"]
+
+transform = Transform( -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 1, 20, 10, 0 )
+shape = SubResource( 3 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="wall1" type="CollisionShape" parent="walls" index="1"]
+
+transform = Transform( 8.74228e-08, 2, -1.50996e-07, 2, -8.74228e-08, 1.16611e-20, -1.32004e-14, -3.01992e-07, -1, -20, 10, 0 )
+shape = SubResource( 4 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="heven" type="StaticBody" parent="." index="3"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 8192
+collision_mask = 3
+friction = 0.7
+bounce = 0.2
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+type = 4
+
+[node name="ceiling" type="CollisionShape" parent="heven" index="0"]
+
+transform = Transform( -2, -3.89414e-07, 0, 7.78829e-07, -1, 0, 0, 0, 1, 0, 4, 0 )
+shape = SubResource( 5 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+

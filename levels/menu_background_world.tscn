@@ -1,0 +1,149 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/word/enviroment.tres" type="Environment" id=1]
+[ext_resource path="res://levels/features/palm.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/features/ppl.tscn" type="PackedScene" id=3]
+
+[node name="menu_background" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+
+environment = ExtResource( 1 )
+
+[node name="menu_camera" type="Camera" parent="." index="1"]
+
+transform = Transform( 0.985969, 0.0732305, 0.150009, 0, 0.898638, -0.438691, -0.166929, 0.432536, 0.886029, 0.96878, 14.8336, 14.8783 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 80.0
+size = 1.0
+near = 0.05
+far = 100.0
+
+[node name="sun" type="DirectionalLight" parent="." index="2"]
+
+transform = Transform( 0.493378, 0.868239, 0.0523469, -0.00231159, -0.0588727, 0.998263, 0.869811, -0.492643, -0.0270395, 0, 67.3569, 0 )
+layers = 1
+light_color = Color( 1, 0.958374, 0.515625, 1 )
+light_energy = 0.88
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 0.8
+directional_shadow_bias_split_scale = 0.25
+directional_shadow_depth_range = 1
+directional_shadow_max_distance = 300.0
+_sections_unfolded = [ "Light" ]
+
+[node name="palms" type="Spatial" parent="." index="3"]
+
+editor/display_folded = true
+
+[node name="palm" parent="palms" index="0" instance=ExtResource( 2 )]
+
+transform = Transform( 1.99135, -0.185827, 0, 0.185827, 1.99135, 0, 0, 0, 2, 16.1916, -0.408514, 0.654568 )
+anim_length = 2.0
+
+[node name="palm2" parent="palms" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( -0.301826, 0.341105, -2.12989, 0.508138, 1.27483, 0.132158, 1.66093, -0.621379, -0.392159, -25.6448, -1.00613, -10.3238 )
+anim_length = 2.0
+
+[node name="palm4" parent="palms" index="2" instance=ExtResource( 2 )]
+
+transform = Transform( 0.926176, 0.247506, -1.75526, 0.0323048, 1.97772, 0.295921, 1.77233, -0.165389, 0.911862, -15.886, 2.6623, 11.72 )
+anim_length = 2.0
+
+[node name="palm5" parent="palms" index="3" instance=ExtResource( 2 )]
+
+transform = Transform( 0.869216, -0.385855, -1.75943, 0.321418, 1.95544, -0.270052, 1.77233, -0.165389, 0.911862, 22.0667, -8.61743, -18.7265 )
+anim_length = 2.0
+
+[node name="palm3" parent="palms" index="4" instance=ExtResource( 2 )]
+
+transform = Transform( 0.907917, -0.0847242, -1.78003, 0.185827, 1.99135, 0, 1.77233, -0.165389, 0.911862, -26.7927, 0, -3.90644 )
+anim_length = 2.0
+
+[node name="palm6" parent="palms" index="5" instance=ExtResource( 2 )]
+
+transform = Transform( 0.921231, -0.250653, -0.2975, 0.0560342, 0.842275, -0.536128, 0.384959, 0.477228, 0.789975, -25.5541, -5.12232, -38.6288 )
+anim_length = 2.0
+
+[node name="palm7" parent="palms" index="6" instance=ExtResource( 2 )]
+
+transform = Transform( 0.606711, -0.239327, 0.75804, 0.35759, 0.933839, 0.00862645, -0.709952, 0.265833, 0.652151, 17.5543, -3.30882, -39.8575 )
+anim_length = 2.0
+
+[node name="palm12" parent="palms" index="7" instance=ExtResource( 2 )]
+
+transform = Transform( 0.606711, -0.239327, 0.75804, 0.35759, 0.933839, 0.00862645, -0.709952, 0.265833, 0.652151, 17.5543, -9.42972, -78.3 )
+anim_length = 2.0
+
+[node name="palm13" parent="palms" index="8" instance=ExtResource( 2 )]
+
+transform = Transform( 0.185198, 0.223902, 0.956854, 0.129941, 0.959569, -0.249687, -0.974072, 0.170576, 0.148617, -19.5231, -11.348, -78.3 )
+anim_length = 2.0
+
+[node name="palm14" parent="palms" index="9" instance=ExtResource( 2 )]
+
+transform = Transform( 0.185198, 0.223902, 0.956854, 0.129941, 0.959569, -0.249687, -0.974072, 0.170576, 0.148617, -31.4118, -15.6696, -65.8877 )
+anim_length = 2.0
+
+[node name="palm15" parent="palms" index="10" instance=ExtResource( 2 )]
+
+transform = Transform( 0.185198, 0.223902, 0.956854, 0.129941, 0.959569, -0.249687, -0.974072, 0.170576, 0.148617, -42.8481, -7.83147, -67.6601 )
+anim_length = 2.0
+
+[node name="palm16" parent="palms" index="11" instance=ExtResource( 2 )]
+
+transform = Transform( -0.0179299, 0.359466, 0.932986, 0.200234, 0.915523, -0.34889, -0.979584, 0.18056, -0.0883926, -71.5974, -1.56872, -51.2257 )
+anim_length = 2.0
+
+[node name="palm10" parent="palms" index="12" instance=ExtResource( 2 )]
+
+transform = Transform( 0.606711, -0.239327, 0.75804, 0.35759, 0.933839, 0.00862645, -0.709952, 0.265833, 0.652151, 29.3348, -7.57676, -46.734 )
+anim_length = 2.0
+
+[node name="palm11" parent="palms" index="13" instance=ExtResource( 2 )]
+
+transform = Transform( 0.606711, -0.239327, 0.75804, 0.35759, 0.933839, 0.00862645, -0.709952, 0.265833, 0.652151, 49.7657, -4.43687, -60.2947 )
+anim_length = 2.0
+
+[node name="palm8" parent="palms" index="14" instance=ExtResource( 2 )]
+
+transform = Transform( -0.25591, -0.0776325, 0.963578, 0.0372514, 0.995238, 0.0900765, -0.965983, 0.0589462, -0.251799, 8.50127, -10.4516, -45.0186 )
+anim_length = 2.0
+
+[node name="palm9" parent="palms" index="15" instance=ExtResource( 2 )]
+
+transform = Transform( -0.279172, 0.272562, 1.1348, 0.135523, 1.16649, -0.246834, -1.15918, 0.0707354, -0.302159, -25.5558, -5.35805, -38.8126 )
+anim_length = 2.0
+
+[node name="ppl" parent="." index="4" instance=ExtResource( 3 )]
+
+transform = Transform( -0.823483, -0.102786, -0.557952, -0.431269, -0.525577, 0.733332, -0.368623, 0.844514, 0.388476, 14.7983, 27.502, -22.2442 )
+
+[node name="ppl2" parent="." index="5" instance=ExtResource( 3 )]
+
+transform = Transform( -0.762758, 0.626696, 0.159538, 0.191602, -0.0166164, 0.981332, 0.617648, 0.779087, -0.107402, -19.9205, 23.3456, -22.4578 )
+
+

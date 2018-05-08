@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://levels/features/grass.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/tex/grass_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/tex/grass_next4.png" type="Texture" id=2]
 
 [node name="grass2" instance=ExtResource( 1 )]
 

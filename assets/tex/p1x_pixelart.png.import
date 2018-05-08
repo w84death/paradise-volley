@@ -8,10 +8,10 @@ path.etc2="res://.import/p1x_pixelart.png-8558c3dfd54273d291bd396ac43d0fb7.etc2.
 [deps]
 
 source_file="res://assets/tex/p1x_pixelart.png"
-source_md5="68f43156f7ac0a958541d49263a57ad3"
+source_md5="c656ea0930c0e0cc97d323e725acff61"
 
 dest_files=[ "res://.import/p1x_pixelart.png-8558c3dfd54273d291bd396ac43d0fb7.s3tc.stex", "res://.import/p1x_pixelart.png-8558c3dfd54273d291bd396ac43d0fb7.etc2.stex" ]
-dest_md5="37ef2bb414096117409032887c91042e"
+dest_md5="0d3066d38dae7af95535a50565c21ba8"
 
 [params]
 

@@ -1,43 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/fonts/FifteenTwenty-Bold.otf" type="DynamicFontData" id=2]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="DynamicFont" id=3]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 0.169907, 0.359506, 0.511719, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-_sections_unfolded = [ "Shadow" ]
+size = 48
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = -4
+extra_spacing_space = 12
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
+resource_name = "marque"
 length = 10.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("labels:rect_position")
+tracks/0/path = NodePath("mrq1:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -46,17 +29,19 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 10 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -1182, 0 ) ]
+"values": [ Vector2( 578, 11 ), Vector2( -3922, 11 ) ]
 }
 
-[node name="marque" type="Panel" index="0"]
+[node name="marque" type="Panel"]
 
 anchor_left = 0.0
-anchor_top = 1.0
+anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -82.0
-margin_bottom = -18.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_right = -32.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 575, 64 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -64,19 +49,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 1 )
-custom_styles/panel = SubResource( 1 )
-_sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
+_sections_unfolded = [ "Margin", "Rect", "Theme", "custom_styles" ]
 
 [node name="marque" type="Control" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 320.0
-margin_top = 22.0
-margin_right = 320.0
-margin_bottom = 22.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -85,81 +65,59 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="anim" type="AnimationPlayer" parent="marque" index="0"]
+[node name="labels" type="Control" parent="marque" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_right = -4.0
+rect_min_size = Vector2( 565, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="mrq1" type="Label" parent="marque/labels" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1506.0
+margin_top = -21.0
+margin_right = 2386.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = "***    * ARCADE EDITION * MAXIMUM FUN * INSTANT ACTION * NON VOILENCE * MAKE GAMES NOT WAR * LOWPOLY * GODOT ENGINE * FREEE * OPEN SOURCE *   ***"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Theme", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="marque/labels" index="1"]
 
 root_node = NodePath("..")
 autoplay = "marque"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-playback_speed = 1.5
-anims/marque = SubResource( 2 )
+playback_speed = 0.5
+anims/marque = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
-
-[node name="labels" type="Control" parent="marque" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -263.258
-margin_right = -263.258
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
-
-[node name="mrq1" type="Label" parent="marque/labels" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -282.0
-margin_top = -19.0
-margin_right = 844.0
-margin_bottom = 41.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "*** ARCADE EDITION * MAXIMUM FUN * INSTANT ACTION * NON VOILENCE * ONLY LOVE * MAKE GAMES NOT WAR *** "
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "Theme", "custom_colors" ]
-
-[node name="mrq2" type="Label" parent="marque/labels" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 900.0
-margin_top = -19.0
-margin_right = 2047.0
-margin_bottom = 41.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "*** ARCADE EDITION * MAXIMUM FUN * INSTANT ACTION * NON VOILENCE * ONLY LOVE * MAKE GAMES NOT WAR *** "
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "Theme", "custom_colors" ]
 
 
