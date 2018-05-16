@@ -31,7 +31,8 @@ func is_on_floor():
 		if t == FLOOR_LEFT or t == FLOOR_RIGHT:
 			var pos = get_translation().x
 			if pos > 0: t = 3
-			if pos < 0: t =2
+			if pos < 0: t = 2
 			get_tree().call_group('scores', 'set_score', t)
 			on_floor = true
+			return true
 	return false

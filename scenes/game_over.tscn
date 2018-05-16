@@ -9,18 +9,20 @@
 
 script/source = "extends Control
 
-# class member variables go here, for example:
-# var a = 2
-# var b = \"textvar\"
+onready var winner = get_node(\"center/labels/winner\")
 
 func _ready():
+	if ProjectSettings.get_setting('winner') == 0:
+		winner.set_text('BLUE PLAYER WINS!')
+	else:
+		winner.set_text('RED PLAYER WINS!')
 	set_process_input(true)
 
 func _input(event):
 	if Input.is_action_pressed(\"ui_accept\"):
 		get_tree().change_scene(\"res://scenes/game.tscn\")
 	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().change_scene(\"res://scenes/menu.tscn\")"
+		get_tree().change_scene(\"res://scenes/intro.tscn\")"
 
 [sub_resource type="Animation" id=2]
 
@@ -40,7 +42,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[node name="game_over" type="Control" index="0"]
+[node name="game_over" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -137,7 +139,7 @@ size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 2
-text = "PLAYER LEFT (BLUE) WINS!"
+text = "PLAYER 0 (BLUE) WINS!"
 align = 1
 valign = 1
 percent_visible = 1.0
