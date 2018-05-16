@@ -66,7 +66,7 @@ _sections_unfolded = [ "Albedo", "Flags", "Metallic" ]
 
 radius = 1.0
 
-[node name="ball" type="RigidBody" index="0"]
+[node name="ball" type="RigidBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -78,8 +78,8 @@ friction = 0.5
 bounce = 1.0
 gravity_scale = 6.0
 custom_integrator = false
-continuous_cd = false
-contacts_reported = 2
+continuous_cd = true
+contacts_reported = 1
 contact_monitor = true
 sleeping = false
 can_sleep = true

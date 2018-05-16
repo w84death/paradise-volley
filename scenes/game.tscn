@@ -16,11 +16,11 @@
 [ext_resource path="res://levels/features/flower2.tscn" type="PackedScene" id=14]
 [ext_resource path="res://levels/features/ppl.tscn" type="PackedScene" id=15]
 [ext_resource path="res://levels/features/cort.tscn" type="PackedScene" id=16]
-[ext_resource path="res://levels/features/pole.tscn" type="PackedScene" id=17]
-[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=17]
+[ext_resource path="res://levels/features/pole.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=19]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 
 resource_name = "start"
 length = 4.0
@@ -156,7 +156,7 @@ autoplay = "start"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/start = SubResource( 4 )
+anims/start = SubResource( 1 )
 blend_times = [  ]
 
 [node name="cameras" type="Spatial" parent="." index="1"]
@@ -295,7 +295,6 @@ _sections_unfolded = [ "Theme" ]
 
 [node name="scores" type="Control" parent="GUI" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
@@ -308,92 +307,88 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 5 )
 _sections_unfolded = [ "Anchor", "Rect" ]
+MAX_SCORE = 10
 
-[node name="labels" type="HBoxContainer" parent="GUI/scores" index="0"]
+[node name="time" type="Label" parent="GUI/scores" index="0"]
 
-editor/display_folded = true
-anchor_left = 0.5
+anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.5
-anchor_bottom = 0.0
-margin_left = -57.5
-margin_right = 57.5
-margin_bottom = 60.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = 2.0
+margin_right = 32.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 64, 64 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 2
+text = "3:00"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants" ]
+
+[node name="right" type="ProgressBar" parent="GUI/scores" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 45.0
+margin_top = 18.0
+margin_right = 205.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_constants/separation = 12
-alignment = 1
-_sections_unfolded = [ "custom_constants" ]
+min_value = 0.0
+max_value = 10.0
+step = 1.0
+page = 0.0
+value = 10.0
+exp_edit = false
+rounded = false
+percent_visible = false
+_sections_unfolded = [ "Rect", "Theme" ]
 
-[node name="left" type="Label" parent="GUI/scores/labels" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 23.0
-margin_right = 34.0
-margin_bottom = 60.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors" ]
-
-[node name="_vs_" type="Label" parent="GUI/scores/labels" index="1"]
+[node name="left" type="ProgressBar" parent="GUI/scores" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 46.0
-margin_right = 69.0
-margin_bottom = 60.0
+margin_left = -45.0
+margin_top = 18.0
+margin_right = 115.0
+margin_bottom = 50.0
+rect_scale = Vector2( -1, 1 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 2
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "vs"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors" ]
-
-[node name="right" type="Label" parent="GUI/scores/labels" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 81.0
-margin_right = 92.0
-margin_bottom = 60.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors" ]
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 10.0
+step = 1.0
+page = 0.0
+value = 10.0
+exp_edit = false
+rounded = false
+percent_visible = false
+_sections_unfolded = [ "Percent", "Rect", "Theme" ]
 
 [node name="p1x" parent="GUI" index="1" instance=ExtResource( 6 )]
 
@@ -402,6 +397,7 @@ margin_right = -8.0
 
 [node name="countdown" type="CenterContainer" parent="GUI" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -413,6 +409,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 use_top_left = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="center" type="Container" parent="GUI/countdown" index="0"]
 
@@ -1216,26 +1215,26 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="cort" parent="gameplay" index="0" instance=ExtResource( 16 )]
 
-[node name="pole" parent="gameplay" index="1" instance=ExtResource( 17 )]
+[node name="ball" parent="gameplay/cort" index="4" instance=ExtResource( 17 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0 )
+axis_lock_linear_z = true
+_sections_unfolded = [ "Axis Lock", "Collision", "Transform", "material" ]
+
+[node name="pole" parent="gameplay" index="1" instance=ExtResource( 18 )]
 
 type = 4
 
-[node name="player_1" parent="gameplay" index="2" instance=ExtResource( 18 )]
+[node name="player_1" parent="gameplay" index="2" instance=ExtResource( 19 )]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5, 6.55826, 0 )
 player_id = 0
 bot = false
 
-[node name="player_2" parent="gameplay" index="3" instance=ExtResource( 18 )]
+[node name="player_2" parent="gameplay" index="3" instance=ExtResource( 19 )]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 6.55826, 0 )
 bot = false
-
-[node name="ball" parent="gameplay" index="4" instance=ExtResource( 19 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0 )
-axis_lock_linear_z = true
-_sections_unfolded = [ "Axis Lock", "Collision", "Transform", "material" ]
 
 [connection signal="animation_finished" from="countdown" to="." method="_on_countdown_animation_finished"]
 

@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Paradise Volley - v0.8"
+config/name="Paradise Volley - v0.9 Pyrkon Edition"
 run/main_scene="res://scenes/intro.tscn"
 boot_splash/image="res://assets/splash.png"
 boot_splash/bg_color=Color( 0.509804, 0.976471, 1, 1 )

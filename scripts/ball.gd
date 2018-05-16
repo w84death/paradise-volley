@@ -12,7 +12,9 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if is_on_floor():
+	
+	is_on_floor()
+	if on_floor:
 		velocity = Vector3(0, 1, 0)
 		velocity = velocity.normalized() * jump_speed * delta
 		set_axis_velocity(velocity)
@@ -25,8 +27,11 @@ func is_on_floor():
 	var t = -1
 	for cb in get_colliding_bodies():
 		t = cb.get_type()
-		get_tree().call_group('scores', 'set_score', t)
+		
 		if t == FLOOR_LEFT or t == FLOOR_RIGHT:
+			var pos = get_translation().x
+			if pos > 0: t = 3
+			if pos < 0: t =2
+			get_tree().call_group('scores', 'set_score', t)
 			on_floor = true
-			return true
 	return false

@@ -1,25 +1,26 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/themes/h1.theme" type="Theme" id=2]
-[ext_resource path="res://assets/tex/p1x_pixelart.png" type="Texture" id=3]
-[ext_resource path="res://assets/tex/pyrkon-logo.png" type="Texture" id=4]
-[ext_resource path="res://scenes/corners.tscn" type="PackedScene" id=5]
-[ext_resource path="res://levels/menu_background_world.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/corners.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/menu_background_world.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends Control
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
 
 func _ready():
 	set_process_input(true)
 
 func _input(event):
 	if Input.is_action_pressed(\"ui_accept\"):
-		get_tree().change_scene(\"res://scenes/main_menu.tscn\")
-		
+		get_tree().change_scene(\"res://scenes/game.tscn\")
 	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().quit()"
+		get_tree().change_scene(\"res://scenes/menu.tscn\")"
 
 [sub_resource type="Animation" id=2]
 
@@ -39,7 +40,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[node name="intro" type="Control" index="0"]
+[node name="game_over" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -99,9 +100,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -147.0
-margin_top = -48.0
+margin_top = -78.0
 margin_right = 146.0
-margin_bottom = 48.0
+margin_bottom = 18.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -109,7 +110,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 2 )
-text = "PARADISE VOLLEY"
+text = "GAME OVER"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -117,19 +118,32 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme" ]
 
-[node name="p1x" type="Sprite" parent="center/labels" index="1"]
+[node name="winner" type="Label" parent="center/labels" index="1"]
 
-position = Vector2( 0, -130 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="pyrkon" type="Sprite" parent="center/labels" index="2"]
-
-position = Vector2( 0, 100 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = 20.0
+margin_right = 241.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 2
+text = "PLAYER LEFT (BLUE) WINS!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants" ]
 
 [node name="botom" type="Control" parent="." index="1"]
 
@@ -145,31 +159,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="loading" type="Label" parent="botom" index="0"]
+[node name="coin2" type="Label" parent="botom" index="0"]
 
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "LOADING GAME..."
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors" ]
-
-[node name="coin2" type="Label" parent="botom" index="1"]
-
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -182,7 +173,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "INSERT COIN"
+text = "CONTINUE?"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -200,11 +191,11 @@ playback_speed = 1.0
 anims/blink = SubResource( 2 )
 blend_times = [  ]
 
-[node name="corners" parent="." index="2" instance=ExtResource( 5 )]
+[node name="corners" parent="." index="2" instance=ExtResource( 3 )]
 
 _sections_unfolded = [ "Rect" ]
 
-[node name="menu_background" parent="." index="3" instance=ExtResource( 6 )]
+[node name="menu_background" parent="." index="3" instance=ExtResource( 4 )]
 
 [connection signal="gui_input" from="." to="." method="_on_intro_gui_input"]
 

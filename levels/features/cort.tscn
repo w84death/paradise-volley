@@ -1,18 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/cort.gd" type="Script" id=1]
 
-[sub_resource type="PlaneShape" id=5]
-
-plane = Plane( 0, 1, 0, 0 )
-
-[sub_resource type="PlaneMesh" id=6]
+[sub_resource type="PlaneMesh" id=2]
 
 size = Vector2( 20, 20 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=3]
 
 render_priority = 0
 flags_transparent = false
@@ -64,7 +60,11 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="PlaneShape" id=8]
+
+plane = Plane( 0, 1, 0, 0 )
+
+[sub_resource type="SpatialMaterial" id=4]
 
 render_priority = 0
 flags_transparent = false
@@ -116,15 +116,19 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="PlaneShape" id=2]
+[sub_resource type="PlaneShape" id=9]
 
 plane = Plane( 0, 1, 0, 0 )
 
-[sub_resource type="PlaneShape" id=3]
+[sub_resource type="PlaneShape" id=5]
 
 plane = Plane( 0, 1, 0, 0 )
 
-[sub_resource type="PlaneShape" id=4]
+[sub_resource type="PlaneShape" id=6]
+
+plane = Plane( 0, 1, 0, 0 )
+
+[sub_resource type="PlaneShape" id=7]
 
 plane = Plane( 0, 1, 0, 0 )
 
@@ -147,12 +151,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 type = 2
 
-[node name="CollisionShape" type="CollisionShape" parent="floor_left" index="0"]
-
-shape = SubResource( 5 )
-disabled = false
-
-[node name="MeshInstance" type="MeshInstance" parent="floor_left" index="1"]
+[node name="MeshInstance" type="MeshInstance" parent="floor_left" index="0"]
 
 visible = false
 layers = 1
@@ -164,10 +163,15 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 6 )
+mesh = SubResource( 2 )
 skeleton = NodePath("..")
-material/0 = SubResource( 8 )
+material/0 = SubResource( 3 )
 _sections_unfolded = [ "material" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="floor_left" index="1"]
+
+shape = SubResource( 8 )
+disabled = false
 
 [node name="floor_right" type="StaticBody" parent="." index="1"]
 
@@ -182,14 +186,9 @@ constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-type = 2
+type = 3
 
-[node name="CollisionShape" type="CollisionShape" parent="floor_right" index="0"]
-
-shape = SubResource( 5 )
-disabled = false
-
-[node name="MeshInstance" type="MeshInstance" parent="floor_right" index="1"]
+[node name="MeshInstance" type="MeshInstance" parent="floor_right" index="0"]
 
 visible = false
 layers = 1
@@ -201,10 +200,15 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 6 )
+mesh = SubResource( 2 )
 skeleton = NodePath("..")
-material/0 = SubResource( 7 )
+material/0 = SubResource( 4 )
 _sections_unfolded = [ "material" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="floor_right" index="1"]
+
+shape = SubResource( 9 )
+disabled = false
 
 [node name="walls" type="StaticBody" parent="." index="2"]
 
@@ -224,14 +228,14 @@ type = 4
 [node name="wall2" type="CollisionShape" parent="walls" index="0"]
 
 transform = Transform( -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 1, 20, 10, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="wall1" type="CollisionShape" parent="walls" index="1"]
 
 transform = Transform( 8.74228e-08, 2, -1.50996e-07, 2, -8.74228e-08, 1.16611e-20, -1.32004e-14, -3.01992e-07, -1, -20, 10, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
@@ -254,7 +258,7 @@ type = 4
 [node name="ceiling" type="CollisionShape" parent="heven" index="0"]
 
 transform = Transform( -2, -3.89414e-07, 0, 7.78829e-07, -1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
