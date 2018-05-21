@@ -4,7 +4,7 @@
 [ext_resource path="res://levels/features/palm.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/features/ppl.tscn" type="PackedScene" id=3]
 
-[node name="menu_background" type="Spatial"]
+[node name="menu_background" type="Spatial" index="0"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 
@@ -145,5 +145,13 @@ transform = Transform( -0.823483, -0.102786, -0.557952, -0.431269, -0.525577, 0.
 [node name="ppl2" parent="." index="5" instance=ExtResource( 3 )]
 
 transform = Transform( -0.762758, 0.626696, 0.159538, 0.191602, -0.0166164, 0.981332, 0.617648, 0.779087, -0.107402, -19.9205, 23.3456, -22.4578 )
+
+[node name="ppl3" parent="." index="6" instance=ExtResource( 3 )]
+
+transform = Transform( -0.571856, 0.796876, 0.194859, 0.0679728, -0.190686, 0.979295, 0.817533, 0.573261, 0.0548791, -4.29643, 13.2964, 9.87792 )
+
+[node name="ppl4" parent="." index="7" instance=ExtResource( 3 )]
+
+transform = Transform( -0.851795, -0.476711, -0.217238, -0.21399, -0.0618906, 0.974873, -0.478178, 0.876879, -0.049293, 2.73228, 13.6135, 11.2975 )
 
 

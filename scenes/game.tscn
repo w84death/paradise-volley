@@ -145,7 +145,7 @@ use_filter = true
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="game" type="Spatial"]
+[node name="game" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -553,8 +553,6 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custo
 transform = Transform( 12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0 )
 
 [node name="terrain_features" type="Spatial" parent="." index="7"]
-
-editor/display_folded = true
 
 [node name="palms" type="Spatial" parent="terrain_features" index="0"]
 
@@ -1166,8 +1164,6 @@ anim_length = 2.0
 
 [node name="ppl" type="Spatial" parent="terrain_features" index="3"]
 
-editor/display_folded = true
-
 [node name="ppl" parent="terrain_features/ppl" index="0" instance=ExtResource( 15 )]
 
 transform = Transform( 0.816035, 0.573577, 0.0713939, -0.0871558, -1.64621e-07, 0.996195, 0.571394, -0.819152, 0.0499904, -12.2047, 4.7934, -4.82846 )
@@ -1198,15 +1194,15 @@ transform = Transform( -0.601236, 0.797338, -0.0526012, -0.0871558, -1.64621e-07
 
 [node name="ppl4" parent="terrain_features/ppl" index="7" instance=ExtResource( 15 )]
 
-transform = Transform( -0.99508, -0.0472918, -0.0870583, -0.0871558, -1.64621e-07, 0.996195, -0.0471118, 0.998881, -0.00412158, 11.2825, 4.7934, -28.0789 )
+transform = Transform( -0.99508, -0.0472918, -0.0870583, -0.0871558, -1.64621e-07, 0.996195, -0.0471118, 0.998881, -0.00412158, -1.75953, 4.7934, -33.2297 )
 
 [node name="ppl5" parent="terrain_features/ppl" index="8" instance=ExtResource( 15 )]
 
-transform = Transform( -0.99508, -0.0472918, -0.0870583, -0.0871558, -1.64621e-07, 0.996195, -0.0471118, 0.998881, -0.00412158, 12.4124, 4.7934, -32.6751 )
+transform = Transform( -0.99508, -0.0472918, -0.0870583, -0.0871558, -1.64621e-07, 0.996195, -0.0471118, 0.998881, -0.00412158, 13.723, 4.7934, -31.5794 )
 
 [node name="ppl6" parent="terrain_features/ppl" index="9" instance=ExtResource( 15 )]
 
-transform = Transform( -0.99508, -0.0472918, -0.0870583, -0.0871558, -1.64621e-07, 0.996195, -0.0471118, 0.998881, -0.00412158, 8.03791, 4.47706, -33.4038 )
+transform = Transform( -0.99508, -0.0472918, -0.0870583, -0.0871558, -1.64621e-07, 0.996195, -0.0471118, 0.998881, -0.00412158, 9.58931, 4.47706, -33.7441 )
 
 [node name="gameplay" type="Spatial" parent="." index="8"]
 

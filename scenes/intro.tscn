@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/themes/theme.tres" type="Theme" id=1]
-[ext_resource path="res://assets/themes/h1.theme" type="Theme" id=2]
-[ext_resource path="res://assets/tex/p1x_pixelart.png" type="Texture" id=3]
-[ext_resource path="res://assets/tex/pyrkon-logo.png" type="Texture" id=4]
+[ext_resource path="res://assets/tex/p1x_pixelart.png" type="Texture" id=2]
+[ext_resource path="res://assets/tex/pyrkon-logo.png" type="Texture" id=3]
+[ext_resource path="res://gui/title.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/corners.tscn" type="PackedScene" id=5]
 [ext_resource path="res://levels/menu_background_world.tscn" type="PackedScene" id=6]
 
@@ -39,7 +39,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[node name="intro" type="Control" index="0"]
+[node name="intro" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -92,44 +92,22 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="title" type="Label" parent="center/labels" index="0"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -147.0
-margin_top = -48.0
-margin_right = 146.0
-margin_bottom = 48.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-theme = ExtResource( 2 )
-text = "PARADISE VOLLEY"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Theme" ]
-
-[node name="p1x" type="Sprite" parent="center/labels" index="1"]
+[node name="p1x" type="Sprite" parent="center/labels" index="0"]
 
 position = Vector2( 0, -130 )
 scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="pyrkon" type="Sprite" parent="center/labels" index="1"]
+
+visible = false
+position = Vector2( 0, 100 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="pyrkon" type="Sprite" parent="center/labels" index="2"]
-
-position = Vector2( 0, 100 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+[node name="logo" parent="center/labels" index="2" instance=ExtResource( 4 )]
 
 [node name="botom" type="Control" parent="." index="1"]
 
