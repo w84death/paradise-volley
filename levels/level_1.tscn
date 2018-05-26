@@ -58,7 +58,7 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 0.0195312, 1, 0.885101, 0.519333 )
-metallic = 0.0
+metallic = 0.3
 metallic_specular = 0.5
 metallic_texture_channel = 0
 roughness = 0.0
@@ -91,7 +91,7 @@ proximity_fade_enable = false
 distance_fade_enable = true
 distance_fade_min_distance = 0.0
 distance_fade_max_distance = 10.0
-_sections_unfolded = [ "Albedo", "Distance Fade", "NormalMap", "Refraction", "UV1" ]
+_sections_unfolded = [ "Albedo", "Distance Fade", "Metallic", "NormalMap", "Refraction", "UV1" ]
 
 [sub_resource type="Animation" id=7]
 

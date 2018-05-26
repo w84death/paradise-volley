@@ -48,7 +48,7 @@ ssao_intensity2 = 3.0
 ssao_bias = 0.01
 ssao_light_affect = 0.0
 ssao_color = Color( 0, 0, 0, 1 )
-ssao_quality = 0
+ssao_quality = 2
 ssao_blur = 3
 ssao_edge_sharpness = 2.0
 dof_blur_far_enabled = false
@@ -80,5 +80,5 @@ adjustment_enabled = false
 adjustment_brightness = 0.9
 adjustment_contrast = 1.1
 adjustment_saturation = 1.2
-_sections_unfolded = [ "Ambient Light", "Background", "Fog", "Glow", "SSAO" ]
+_sections_unfolded = [ "Ambient Light", "Background", "Fog", "SS Reflections", "SSAO" ]
 

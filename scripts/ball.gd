@@ -30,6 +30,7 @@ func is_on_floor():
 		t = cb.get_type()
 		get_tree().call_group('scores', 'set_score', t)
 		if t == FLOOR_LEFT or t == FLOOR_RIGHT:
+			get_tree().call_group('tapes', 'blink', t)
 			on_floor = true
 			return true
 	return false

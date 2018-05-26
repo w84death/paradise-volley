@@ -18,7 +18,36 @@ I tested this in Latest GodotEngine from Steam on this machine:
     Linux POP!_OS (based on->Ubuntu->Debian)
 
 ## DEVLOG:
-
+    1.0 Hamster Edition
+        RC4
+            little gfx tweaks
+            court bands colour up when lose score
+        RC3
+            new water shader
+            players got real blobby transparent body
+        RC2
+            proper collision boxes on curt
+            ability to jump off other player
+        RC1
+            big hamsters in menu background
+            colours indicating court
+            flares/torches
+            continue timer
+    0.9 Pyrkon Edition
+        this version was presented on Pyrkon expo
+        75fps smoothness (75Hz monitor, 75fps physics/graphics, v-sync)
+    0.7
+        WorldEnviroment mood changes
+        players models
+        more grass/flowers (new textures)
+        fans watching mach
+        points counting (still with a bug)
+    0.6
+        famous corners
+        new palm textures
+        fake perspective (palms are smaller in the background)
+        new intro/menu
+        new marque
     0.5
         some physics
         glorious 640x480 resolution

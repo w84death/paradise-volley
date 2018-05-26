@@ -28,6 +28,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="floor_left" type="StaticBody" parent="." index="0"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0 )
 input_ray_pickable = true
 input_capture_on_drag = true
@@ -49,6 +50,7 @@ disabled = false
 
 [node name="floor_right" type="StaticBody" parent="." index="1"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0 )
 input_ray_pickable = true
 input_capture_on_drag = true

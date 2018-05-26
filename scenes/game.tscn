@@ -1208,7 +1208,6 @@ transform = Transform( -0.99508, -0.0472918, -0.0870583, -0.0871558, -1.64621e-0
 
 [node name="gameplay" type="Spatial" parent="." index="8"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, -20 )
 _sections_unfolded = [ "Transform" ]
 
@@ -1246,12 +1245,10 @@ type = 4
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5, 6.55826, 0 )
 player_id = 0
-bot = false
 
 [node name="player_2" parent="gameplay" index="3" instance=ExtResource( 21 )]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 6.55826, 0 )
-bot = false
 
 [connection signal="animation_finished" from="countdown" to="." method="_on_countdown_animation_finished"]
 

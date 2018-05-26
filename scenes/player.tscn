@@ -246,6 +246,7 @@ _sections_unfolded = [ "Flags", "Transform" ]
 
 [node name="blue" type="MeshInstance" parent="." index="1"]
 
+editor/display_folded = true
 transform = Transform( 1.62921e-07, -1, -1.50996e-07, -1, -1.62921e-07, 0, -2.46003e-14, 1.50996e-07, -1, 0, 0, 0 )
 visible = false
 layers = 1
