@@ -10,6 +10,9 @@
 script/source = "extends Control
 
 onready var winner = get_node(\"center/labels/winner\")
+onready var time_label = get_node(\"botom/time\")
+onready var time_anim = get_node(\"botom/coin2/anim\")
+var time = 4
 
 func _ready():
 	if ProjectSettings.get_setting('winner') == 0:
@@ -22,12 +25,20 @@ func _input(event):
 	if Input.is_action_pressed(\"ui_accept\"):
 		get_tree().change_scene(\"res://scenes/game.tscn\")
 	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().change_scene(\"res://scenes/intro.tscn\")"
+		get_tree().change_scene(\"res://scenes/intro.tscn\")
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	time_label.set_text(str(time))
+	time -= 1
+	if time < 0:
+		get_tree().change_scene(\"res://scenes/intro.tscn\")
+	time_anim.play(\"blink\")
+"
 
 [sub_resource type="Animation" id=2]
 
 length = 1.0
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:custom_colors/font_color")
@@ -42,7 +53,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[node name="game_over" type="Control"]
+[node name="game_over" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -183,7 +194,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme", "Visibility", "custom_colors" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="botom/coin2" index="0"]
+[node name="anim" type="AnimationPlayer" parent="botom/coin2" index="0"]
 
 root_node = NodePath("..")
 autoplay = "blink"
@@ -193,6 +204,30 @@ playback_speed = 1.0
 anims/blink = SubResource( 2 )
 blend_times = [  ]
 
+[node name="time" type="Label" parent="botom" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "Visibility", "custom_colors" ]
+
 [node name="corners" parent="." index="2" instance=ExtResource( 3 )]
 
 _sections_unfolded = [ "Rect" ]
@@ -200,5 +235,7 @@ _sections_unfolded = [ "Rect" ]
 [node name="menu_background" parent="." index="3" instance=ExtResource( 4 )]
 
 [connection signal="gui_input" from="." to="." method="_on_intro_gui_input"]
+
+[connection signal="animation_finished" from="botom/coin2/anim" to="." method="_on_AnimationPlayer_animation_finished"]
 
 

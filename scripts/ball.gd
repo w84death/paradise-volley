@@ -6,6 +6,7 @@ var jump_speed = 2500
 var velocity = Vector3(0,0,0)
 const FLOOR_LEFT = 2
 const FLOOR_RIGHT = 3
+const PLAYER = 0
 const NEUTRAL = 4
 
 func _ready():
@@ -27,12 +28,8 @@ func is_on_floor():
 	var t = -1
 	for cb in get_colliding_bodies():
 		t = cb.get_type()
-		
+		get_tree().call_group('scores', 'set_score', t)
 		if t == FLOOR_LEFT or t == FLOOR_RIGHT:
-			var pos = get_translation().x
-			if pos > 0: t = 3
-			if pos < 0: t = 2
-			get_tree().call_group('scores', 'set_score', t)
 			on_floor = true
 			return true
 	return false

@@ -25,4 +25,3 @@ func set_score(type):
 		if score[1] > 0:
 			ProjectSettings.set_setting('winner', 1)
 		get_tree().change_scene("res://scenes/game_over.tscn")
-	#print(type, score)

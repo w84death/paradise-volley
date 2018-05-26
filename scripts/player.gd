@@ -12,6 +12,7 @@ var on_floor = true
 
 const FLOOR_LEFT = 2
 const FLOOR_RIGHT = 3
+const OTHER_PLAYER = 0
 const NEUTRAL = 4
 
 var left_button = ["p0_left", "p1_left"]
@@ -52,8 +53,7 @@ func is_on_floor():
 	var t = -1
 	for cb in get_colliding_bodies():
 		t = cb.get_type()
-		#print(t)
-		if t == FLOOR_LEFT or t == FLOOR_RIGHT:
+		if t == FLOOR_LEFT or t == FLOOR_RIGHT or t == OTHER_PLAYER:
 			on_floor = true
 			return true
 	return false

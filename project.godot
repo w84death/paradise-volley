@@ -72,9 +72,7 @@ common/physics_fps=75
 [rendering]
 
 quality/filters/use_nearest_mipmap_filter=true
-quality/filters/anisotropic_filter_level=8
 quality/shadows/filter_mode=2
-quality/reflections/texture_array_reflections=false
 quality/shading/force_vertex_shading=true
 quality/voxel_cone_tracing/high_quality=false
 environment/default_clear_color=Color( 0.511719, 0.977112, 1, 1 )

@@ -61,7 +61,7 @@ dof_blur_near_distance = 16.0
 dof_blur_near_transition = 8.0
 dof_blur_near_amount = 0.1
 dof_blur_near_quality = 0
-glow_enabled = true
+glow_enabled = false
 glow_levels/1 = false
 glow_levels/2 = false
 glow_levels/3 = true
@@ -80,5 +80,5 @@ adjustment_enabled = false
 adjustment_brightness = 0.9
 adjustment_contrast = 1.1
 adjustment_saturation = 1.2
-_sections_unfolded = [ "Ambient Light", "Background", "DOF Near Blur", "Fog", "Glow", "SSAO" ]
+_sections_unfolded = [ "Ambient Light", "Background", "Fog", "Glow", "SSAO" ]
 
