@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/models/octopus.obj" type="ArrayMesh" id=1]
+
+[node name="octopus" type="MeshInstance"]
+transform = Transform( -1.49513, -0.846712, 2.4592, 0.0302655, 2.83072, 0.993028, -2.60071, 0.519712, -1.40222, -8.29765, 1.24501, 54.2125 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform", "mesh" ]
+

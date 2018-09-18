@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/octopus.obj-cf8a068608a3171381bf396039981db4.mesh"
+
+[deps]
+
+files=[ "res://.import/octopus.obj-cf8a068608a3171381bf396039981db4.mesh" ]
+
+source_file="res://assets/models/octopus.obj"
+dest_files=[ "res://.import/octopus.obj-cf8a068608a3171381bf396039981db4.mesh", "res://.import/octopus.obj-cf8a068608a3171381bf396039981db4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
