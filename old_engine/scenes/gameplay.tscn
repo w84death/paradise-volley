@@ -1,0 +1,174 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://levels/features/cort.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/ball.gd" type="Script" id=3]
+[ext_resource path="res://levels/features/tapes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/tapes.gd" type="Script" id=5]
+[ext_resource path="res://levels/features/torch.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/features/pole.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/pole.gd" type="Script" id=8]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/player.gd" type="Script" id=10]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+friction = 0.5
+rough = false
+bounce = 1.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=2]
+
+friction = 0.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=3]
+
+friction = 0.9
+rough = false
+bounce = 0.2
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=4]
+
+friction = 0.9
+rough = false
+bounce = 0.2
+absorbent = false
+
+[node name="gameplay" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, -20 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cort" type="Spatial" parent="." instance=ExtResource( 1 )]
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="ball" type="RigidBody" parent="cort" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 2
+collision_mask = 1
+mode = 0
+mass = 25.0
+physics_material_override = SubResource( 1 )
+gravity_scale = 6.0
+custom_integrator = false
+continuous_cd = true
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = true
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 3 )
+_sections_unfolded = [ "Axis Lock", "Collision", "Transform", "material" ]
+type = 1
+
+[node name="tapes" type="Spatial" parent="cort" instance=ExtResource( 4 )]
+script = ExtResource( 5 )
+
+[node name="torch" type="Spatial" parent="cort" instance=ExtResource( 6 )]
+transform = Transform( 0.993717, 0.109947, -0.0209405, -0.111923, 0.976169, -0.185921, 0, 0.187097, 0.982341, -16.4069, -9.53674e-07, 11.0039 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="torch3" type="Spatial" parent="cort" instance=ExtResource( 6 )]
+transform = Transform( 0.968177, -0.214347, -0.129186, 0.192792, 0.967921, -0.161124, 0.159578, 0.131091, 0.978443, -8.69465, 1.19209e-06, -12.6268 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="torch4" type="Spatial" parent="cort" instance=ExtResource( 6 )]
+transform = Transform( 0.64674, 0.0964868, 0.756583, 0.090223, 0.975323, -0.201507, -0.757355, 0.198584, 0.622075, 8.75012, 1.19209e-06, -13.0083 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="torch2" type="Spatial" parent="cort" instance=ExtResource( 6 )]
+transform = Transform( 0.980869, -0.194671, 0, 0.194671, 0.980869, 0, 0, 0, 1, 12.0814, -9.53674e-07, 16.6474 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="pole" type="StaticBody" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00338268, 0.0188227, 0.0215931 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 4
+collision_mask = 3
+physics_material_override = SubResource( 2 )
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Collision", "Transform" ]
+type = 4
+
+[node name="player_1" type="RigidBody" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5, 6.55826, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 7
+mode = 0
+mass = 80.0
+physics_material_override = SubResource( 3 )
+gravity_scale = 10.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 3
+contact_monitor = true
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 10 )
+_sections_unfolded = [ "Axis Lock", "Collision", "Transform", "material" ]
+type = 0
+player_id = 0
+bot = false
+
+[node name="player_2" type="RigidBody" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 6.55826, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 7
+mode = 0
+mass = 80.0
+physics_material_override = SubResource( 4 )
+gravity_scale = 10.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 3
+contact_monitor = true
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 10 )
+_sections_unfolded = [ "Axis Lock", "Collision", "Transform", "material" ]
+type = 0
+player_id = 1
+bot = false
+

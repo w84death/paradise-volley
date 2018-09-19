@@ -8,16 +8,14 @@ path.etc2="res://.import/rocks_normal.png-9f1ec200a144133618d8b6199ccd3395.etc2.
 [deps]
 
 source_file="res://assets/tex/rocks_normal.png"
-source_md5="5e270523389a591726533d5c77dc5429"
-
 dest_files=[ "res://.import/rocks_normal.png-9f1ec200a144133618d8b6199ccd3395.s3tc.stex", "res://.import/rocks_normal.png-9f1ec200a144133618d8b6199ccd3395.etc2.stex" ]
-dest_md5="cf2d7d53ae5bec673419da8047cd1b32"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=1
 flags/repeat=true
 flags/filter=true
@@ -27,6 +25,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

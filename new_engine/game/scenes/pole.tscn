@@ -157,7 +157,7 @@ _sections_unfolded = [ "Collision" ]
 type = 3
 
 [node name="pole" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 4 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -173,7 +173,7 @@ material/0 = SubResource( 3 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="pole2" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -4 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -189,7 +189,7 @@ material/0 = SubResource( 3 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="net" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.9342, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.9342, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -205,7 +205,7 @@ material/0 = SubResource( 5 )
 _sections_unfolded = [ "Material", "Transform", "material", "material/0" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
 shape = SubResource( 6 )
 disabled = false
 

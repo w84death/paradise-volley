@@ -6,6 +6,7 @@ uniform float flapping_speed = 28.0;
 uniform float fly_range = 24.0;
 uniform float max_height = 64.0;
 uniform float terrain_scale = 4.0;
+uniform float time_factor = 0.25;
 
 uniform sampler2D height_map;
 
@@ -45,7 +46,8 @@ void vertex() {
 	
 	TRANSFORM[1][1] = 1.5 + sin(TIME * flapping_speed + pos.x);
 	
-	TRANSFORM[3][0] = pos.x * terrain_scale + sin(TIME + noise.x + pos.x) * fly_range;
-	TRANSFORM[3][1] = (height * max_height)  + pos.y * terrain_scale + sin(TIME - noise.x + pos.y) * (fly_range * 0.25);
-	TRANSFORM[3][2] = pos.z * terrain_scale + sin(TIME + noise.y + pos.z) * fly_range;
+	float butertime = TIME * time_factor;
+	TRANSFORM[3][0] = pos.x * terrain_scale + sin(butertime + noise.x + pos.x) * fly_range;
+	TRANSFORM[3][1] = (height * max_height)  + pos.y * terrain_scale + sin(butertime  - noise.x + pos.y) * (fly_range * 0.25);
+	TRANSFORM[3][2] = pos.z * terrain_scale + sin(butertime + noise.y + pos.z) * fly_range;
 }

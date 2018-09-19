@@ -15,3 +15,4 @@ dest_files=[ "res://.import/octopus.obj-cf8a068608a3171381bf396039981db4.mesh", 
 
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

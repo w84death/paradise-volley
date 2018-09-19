@@ -7,16 +7,14 @@ path="res://.import/splash.png-8aa957744d9f4b764dd4680b37c88571.stex"
 [deps]
 
 source_file="res://assets/splash.png"
-source_md5="fd48476e784ab33c5d3a3c04298d8210"
-
 dest_files=[ "res://.import/splash.png-8aa957744d9f4b764dd4680b37c88571.stex" ]
-dest_md5="792c397459194e41e45975be3124665b"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +24,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

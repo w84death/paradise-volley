@@ -31,9 +31,9 @@ func get_type():
 func _physics_process(delta):
 	
 	if Input.is_action_pressed(right_button[player_id]) or (bot and randi()%100 < 1 ):
-		velocity = Vector3(-1, 0, 0)
-	elif Input.is_action_pressed(left_button[player_id]) or (bot and randi()%100 < 1 ):
 		velocity = Vector3(1, 0, 0)
+	elif Input.is_action_pressed(left_button[player_id]) or (bot and randi()%100 < 1 ):
+		velocity = Vector3(-1, 0, 0)
 	else:
 		velocity = Vector3(0,0,0)
 	

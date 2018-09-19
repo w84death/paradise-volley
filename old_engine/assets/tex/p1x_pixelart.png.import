@@ -8,16 +8,14 @@ path.etc2="res://.import/p1x_pixelart.png-8558c3dfd54273d291bd396ac43d0fb7.etc2.
 [deps]
 
 source_file="res://assets/tex/p1x_pixelart.png"
-source_md5="c656ea0930c0e0cc97d323e725acff61"
-
 dest_files=[ "res://.import/p1x_pixelart.png-8558c3dfd54273d291bd396ac43d0fb7.s3tc.stex", "res://.import/p1x_pixelart.png-8558c3dfd54273d291bd396ac43d0fb7.etc2.stex" ]
-dest_md5="0d3066d38dae7af95535a50565c21ba8"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=false
@@ -27,6 +25,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

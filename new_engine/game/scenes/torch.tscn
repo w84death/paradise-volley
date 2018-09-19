@@ -1,129 +1,29 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
-[sub_resource type="Curve" id=3]
+[ext_resource path="res://game/materials/fire/fire_particle.material" type="Material" id=1]
+[ext_resource path="res://game/materials/fire/flame.material" type="Material" id=2]
 
-min_value = 0.0
-max_value = 2.0
-bake_resolution = 100
-_data = [ Vector2( 0, 0.0761719 ), 0.0, 0.0, 0, 0, Vector2( 0.199215, 1.25781 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="CubeMesh" id=5]
 
-[sub_resource type="CurveTexture" id=4]
-
-flags = 4
-width = 2048
-curve = SubResource( 3 )
-
-[sub_resource type="ParticlesMaterial" id=5]
-
-render_priority = 0
-trail_divisor = 4
-trail_size_modifier = SubResource( 4 )
-emission_shape = 0
-flag_align_y = true
-flag_rotate_y = false
-flag_disable_z = false
-spread = 45.0
-flatness = 0.0
-gravity = Vector3( 0, 10, 0 )
-initial_velocity = 1.0
-initial_velocity_random = 0.2
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 1.0
-scale_random = 0.0
-color = Color( 1, 1, 1, 1 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Spread", "Trail" ]
-
-[sub_resource type="SpatialMaterial" id=6]
-
-render_priority = 0
-flags_transparent = true
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 1, 1, 1, 0.25098 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = true
-emission = Color( 1, 0, 0.328125, 1 )
-emission_energy = 5.0
-emission_operator = 0
-emission_on_uv2 = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
-_sections_unfolded = [ "Albedo", "Emission", "Flags", "Vertex Color" ]
-
-[sub_resource type="CubeMesh" id=7]
-
-material = SubResource( 6 )
+material = ExtResource( 2 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
 size = Vector3( 0.1, 1, 0.1 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="CylinderMesh" id=8]
+[sub_resource type="CylinderMesh" id=6]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
 top_radius = 0.2
 bottom_radius = 0.1
 height = 4.0
 radial_segments = 4
 rings = 2
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=7]
 
 render_priority = 0
 flags_transparent = false
@@ -134,6 +34,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 4
@@ -144,6 +47,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 0.222656, 0.0791473, 0.0926013, 1 )
@@ -172,18 +76,20 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Parameters" ]
 
-[sub_resource type="CylinderMesh" id=10]
+[sub_resource type="CylinderMesh" id=8]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
 top_radius = 0.7
 bottom_radius = 0.4
 height = 1.0
 radial_segments = 4
 rings = 2
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=9]
 
 render_priority = 0
 flags_transparent = false
@@ -194,6 +100,9 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 4
@@ -204,6 +113,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 0, 0, 0, 1 )
@@ -232,15 +142,13 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Parameters" ]
 
 [node name="torch" type="Spatial"]
-
 _sections_unfolded = [ "Transform" ]
 
-[node name="Particles" type="Particles" parent="." index="0"]
-
+[node name="Particles" type="Particles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 layers = 1
 material_override = null
@@ -252,26 +160,41 @@ lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 emitting = true
-amount = 128
-lifetime = 2.0
+amount = 512
+lifetime = 1.5
 one_shot = false
-preprocess = 1.0
+preprocess = 1.5
 speed_scale = 1.0
-explosiveness = 0.3
+explosiveness = 0.0
 randomness = 1.0
-fixed_fps = 15
+fixed_fps = 60
 fract_delta = true
 visibility_aabb = AABB( -4, -3.08157, -4, 8, 6.16314, 8 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 5 )
+process_material = ExtResource( 1 )
 draw_passes = 1
-draw_pass_1 = SubResource( 7 )
-_sections_unfolded = [ "Draw Passes", "Process Material", "Time", "Transform" ]
+draw_pass_1 = SubResource( 5 )
+_sections_unfolded = [ "Draw Passes", "Process Material", "Time", "Transform", "draw_pass_1", "process_material" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
-
+[node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = SubResource( 7 )
+_sections_unfolded = [ "material" ]
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.94947, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -285,22 +208,4 @@ mesh = SubResource( 8 )
 skeleton = NodePath("..")
 material/0 = SubResource( 9 )
 _sections_unfolded = [ "material" ]
-
-[node name="MeshInstance2" type="MeshInstance" parent="." index="2"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.94947, 0 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 10 )
-skeleton = NodePath("..")
-material/0 = SubResource( 11 )
-_sections_unfolded = [ "material" ]
-
 

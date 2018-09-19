@@ -8,16 +8,14 @@ path.etc2="res://.import/rock.png-6f2ad24d160aa3cb996a45e2932e37fa.etc2.stex"
 [deps]
 
 source_file="res://assets/tex/rock.png"
-source_md5="cdb1d5062b7afe9e33205c7d5098f1b5"
-
 dest_files=[ "res://.import/rock.png-6f2ad24d160aa3cb996a45e2932e37fa.s3tc.stex", "res://.import/rock.png-6f2ad24d160aa3cb996a45e2932e37fa.etc2.stex" ]
-dest_md5="c58a2336817959a5cd957f207ef8b565"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=true
@@ -27,6 +25,7 @@ flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

@@ -8,16 +8,14 @@ path.etc2="res://.import/grass_2.png-24758054f12f9b1d885f1daf186dbf98.etc2.stex"
 [deps]
 
 source_file="res://assets/tex/grass_2.png"
-source_md5="9d7ed078480b1d0cb4f0b7bf35ae1e1d"
-
 dest_files=[ "res://.import/grass_2.png-24758054f12f9b1d885f1daf186dbf98.s3tc.stex", "res://.import/grass_2.png-24758054f12f9b1d885f1daf186dbf98.etc2.stex" ]
-dest_md5="305bcb26db366e67055e091ef690cb70"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=true
@@ -27,6 +25,7 @@ flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=true
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

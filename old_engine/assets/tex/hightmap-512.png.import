@@ -7,16 +7,14 @@ path="res://.import/hightmap-512.png-0e0a2cfe730695404d1b27b416d53b9a.stex"
 [deps]
 
 source_file="res://assets/tex/hightmap-512.png"
-source_md5="cd8c463afb32878115ed0a369989bdc2"
-
 dest_files=[ "res://.import/hightmap-512.png-0e0a2cfe730695404d1b27b416d53b9a.stex" ]
-dest_md5="fe8174ed61a493a4e919a8ccd6538174"
 
 [params]
 
 compress/mode=1
 compress/lossy_quality=0.8
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=1
 flags/repeat=true
 flags/filter=true
@@ -26,6 +24,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

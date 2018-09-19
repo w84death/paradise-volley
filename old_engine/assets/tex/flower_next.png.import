@@ -8,16 +8,14 @@ path.etc2="res://.import/flower_next.png-307640b05261d3441f430c9688151c3d.etc2.s
 [deps]
 
 source_file="res://assets/tex/flower_next.png"
-source_md5="eb6d26b70d3fd04b50c2b8444de27ef5"
-
 dest_files=[ "res://.import/flower_next.png-307640b05261d3441f430c9688151c3d.s3tc.stex", "res://.import/flower_next.png-307640b05261d3441f430c9688151c3d.etc2.stex" ]
-dest_md5="075cac84fb868dc3bc3dee7af135e1a6"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=true
@@ -27,6 +25,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false
