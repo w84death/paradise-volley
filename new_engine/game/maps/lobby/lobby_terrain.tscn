@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://game/maps/basic_terrain.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/maps/lobby/terrain.material" type="Material" id=2]
+[ext_resource path="res://game/maps/lobby/water.material" type="Material" id=3]
+[ext_resource path="res://game/maps/lobby/grass_basic_particle.material" type="Material" id=4]
+[ext_resource path="res://game/maps/lobby/grass_dark_particle.material" type="Material" id=5]
+[ext_resource path="res://game/maps/lobby/paprotas_big_particle.material" type="Material" id=6]
+[ext_resource path="res://game/maps/lobby/palms_particle.material" type="Material" id=7]
+[ext_resource path="res://game/maps/lobby/insects_particles.material" type="Material" id=8]
+[ext_resource path="res://game/scenes/torch.tscn" type="PackedScene" id=9]
+
+[node name="lobby_terrain" type="Spatial"]
+
+[node name="basic_terrain" parent="." instance=ExtResource( 1 )]
+editor/display_folded = true
+
+[node name="terrain" parent="basic_terrain" index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="water" parent="basic_terrain" index="1"]
+material/0 = ExtResource( 3 )
+
+[node name="grass_basic" parent="basic_terrain" index="2"]
+process_material = ExtResource( 4 )
+
+[node name="grass_dark" parent="basic_terrain" index="3"]
+process_material = ExtResource( 5 )
+
+[node name="paprotas" parent="basic_terrain" index="6"]
+process_material = ExtResource( 6 )
+
+[node name="palms" parent="basic_terrain" index="7"]
+process_material = ExtResource( 7 )
+
+[node name="butterflies" parent="basic_terrain" index="8"]
+visible = false
+process_material = ExtResource( 8 )
+
+[node name="torch" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.987479, 0.153282, -0.03727, -0.157748, 0.959523, -0.233305, 0, 0.236263, 0.971689, 115.899, 20.5474, 85.9188 )
+
+[node name="torch2" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.0784031, -0.247687, -0.965662, -0.157748, 0.959523, -0.233305, 0.984362, 0.134039, -0.114302, 109.507, 20.5474, 91.2371 )
+
+[node name="torch3" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.938772, 0.0576052, -0.339688, 0.151599, 0.954417, -0.257111, 0.309393, -0.292865, -0.904713, 112.6, 20.5474, 77.9254 )
+
+
+[editable path="basic_terrain"]

@@ -36,6 +36,7 @@ _sections_unfolded = [ "Light" ]
 
 [node name="enviroment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )
+_sections_unfolded = [ "environment" ]
 
 [node name="sound_sea" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
