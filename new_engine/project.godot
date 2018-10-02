@@ -164,6 +164,7 @@ p0_jump={
 
 [rendering]
 
+threads/thread_model=2
 quality/directional_shadow/size=1024
 quality/shadow_atlas/size=1024
 quality/shadows/filter_mode=0

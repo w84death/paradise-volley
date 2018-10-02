@@ -103,7 +103,7 @@ tracks/3/keys = {
 "values": [ 110.0, 110.0, 75.0 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=3]
 
 length = 2.0
 loop = false
@@ -133,7 +133,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=4]
 
 length = 2.0
 loop = false
@@ -168,10 +168,13 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Script" ]
 
 [node name="system" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
 
 [node name="SUN" parent="system" index="0"]
+light_cull_mask = -1
 _sections_unfolded = [ "Light", "Shadow", "Transform" ]
+
+[node name="sfx_player" parent="system" index="5"]
+bus = "sfx_bus"
 
 [node name="animations" type="AnimationPlayer" parent="."]
 root_node = NodePath("..")
@@ -183,6 +186,7 @@ anims/demo = SubResource( 1 )
 blend_times = [  ]
 
 [node name="cameras" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="sky_camera" type="Camera" parent="cameras"]
 transform = Transform( 1, 0, 0, 0, 0.970196, 0.242322, 0, -0.242322, 0.970196, 0, 6.34016, 479.878 )
@@ -210,6 +214,7 @@ anims/intro = SubResource( 2 )
 blend_times = [  ]
 
 [node name="Position3D" type="Position3D" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 27, 107 )
 _sections_unfolded = [ "Transform" ]
 
@@ -242,12 +247,14 @@ rows = 64
 spacing = 4.0
 
 [node name="gameplay" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 20.6262, 78.1126 )
 
 [node name="torch" parent="gameplay/cort" index="6"]
 editor/display_folded = true
 
 [node name="GUI" type="Control" parent="."]
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -401,8 +408,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 0.5
-anims/fade-in = SubResource( 10 )
-anims/fade-out = SubResource( 11 )
+anims/fade-in = SubResource( 3 )
+anims/fade-out = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 

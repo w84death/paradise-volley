@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://system/world_enviroment.tres" type="Environment" id=1]
 [ext_resource path="res://game/sound/joungle_back1.ogg" type="AudioStream" id=2]
 [ext_resource path="res://system/code/loop_sample.gd" type="Script" id=3]
 [ext_resource path="res://game/sound/soundscape1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://system/code/sfx_player.gd" type="Script" id=5]
 
 [node name="system" type="Node"]
 
@@ -45,9 +46,9 @@ pitch_scale = 1.0
 autoplay = true
 stream_paused = false
 mix_target = 0
-bus = "Master"
+bus = "intro_bus"
 script = ExtResource( 3 )
-_sections_unfolded = [ "script", "stream" ]
+_sections_unfolded = [ "Script", "script", "stream" ]
 
 [node name="sound_crickets" type="AudioStreamPlayer" parent="."]
 stream = null
@@ -56,7 +57,7 @@ pitch_scale = 1.001
 autoplay = true
 stream_paused = false
 mix_target = 0
-bus = "Master"
+bus = "intro_bus"
 script = ExtResource( 3 )
 
 [node name="sound_soundscape" type="AudioStreamPlayer" parent="."]
@@ -66,8 +67,19 @@ pitch_scale = 1.0
 autoplay = true
 stream_paused = false
 mix_target = 0
-bus = "Master"
+bus = "intro_bus"
 script = ExtResource( 3 )
+
+[node name="sfx_player" type="AudioStreamPlayer" parent="."]
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+stream_paused = false
+mix_target = 0
+bus = "sfx_bus"
+script = ExtResource( 5 )
+_sections_unfolded = [ "Script" ]
 
 [connection signal="finished" from="sound_sea" to="sound_sea" method="_on_sound_finished"]
 [connection signal="finished" from="sound_crickets" to="sound_crickets" method="_on_sound_finished"]
