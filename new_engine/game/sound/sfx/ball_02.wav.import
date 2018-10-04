@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ball_02.wav-dd14023434eb829b966315981248ae59.sample"
+
+[deps]
+
+source_file="res://game/sound/sfx/ball_02.wav"
+dest_files=[ "res://.import/ball_02.wav-dd14023434eb829b966315981248ae59.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

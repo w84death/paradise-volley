@@ -252,3 +252,12 @@ playback_speed = 1.0
 anims/benc = SubResource( 7 )
 blend_times = [  ]
 
+[node name="ball_player" type="AudioStreamPlayer" parent="."]
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+stream_paused = false
+mix_target = 0
+bus = "sfx_bus"
+

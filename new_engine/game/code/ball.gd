@@ -9,13 +9,26 @@ const FLOOR_RIGHT = 3
 const PLAYER = 0
 const NEUTRAL = 4
 
+var ball_sfx = [] 
+onready var ball_player = get_node("ball_player")
+
 func _ready():
+	ball_sfx.append(load("res://game/sound/sfx/ball_01.wav"))
+	ball_sfx.append(load("res://game/sound/sfx/ball_02.wav"))
+	ball_sfx.append(load("res://game/sound/sfx/ball_03.wav"))
+	ball_sfx.append(load("res://game/sound/sfx/ball_04.wav"))
+	ball_sfx.append(load("res://game/sound/sfx/ball_05.wav"))
 	pass
 
 func _physics_process(delta):
 	
 	is_on_floor()
+	is_colliding()
+	
 	if on_floor:
+		#ball_player.stream = ball_sfx
+		#ball_player.play()
+		
 		get_node("anim").play("benc")
 		velocity = Vector3(0, 1, 0)
 		velocity = velocity.normalized() * jump_speed * delta
@@ -35,3 +48,15 @@ func is_on_floor():
 			on_floor = true
 			return true
 	return false
+	
+func is_colliding():
+	if not get_colliding_bodies().empty():
+		play_sfx()
+			
+func play_sfx():
+	if ball_player.is_playing():
+		return
+	randomize()
+	var no = randi()%ball_sfx.size()
+	ball_player.stream = ball_sfx[no]
+	ball_player.play()
