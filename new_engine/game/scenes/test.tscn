@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://system/theme.tres" type="Theme" id=1]
 [ext_resource path="res://game/code/clicks.gd" type="Script" id=2]
-[ext_resource path="res://game/code/button_audio.gd" type="Script" id=3]
-[ext_resource path="res://game/sound/buttons1.ogg" type="AudioStream" id=4]
-[ext_resource path="res://game/sound/buttons2.ogg" type="AudioStream" id=5]
-[ext_resource path="res://game/sound/buttons3.ogg" type="AudioStream" id=6]
-[ext_resource path="res://game/sound/buttons4.ogg" type="AudioStream" id=7]
+[ext_resource path="res://game/scenes/audio_ui.tscn" type="PackedScene" id=3]
 
 [node name="Control" type="Control"]
 anchor_left = 0.0
@@ -88,44 +84,7 @@ text = "CLICK ME"
 flat = false
 align = 1
 
-[node name="button_audio" type="Node" parent="Panel"]
-script = ExtResource( 3 )
-
-[node name="a1" type="AudioStreamPlayer" parent="Panel/button_audio"]
-stream = ExtResource( 4 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-stream_paused = false
-mix_target = 0
-bus = "Master"
-
-[node name="a2" type="AudioStreamPlayer" parent="Panel/button_audio"]
-stream = ExtResource( 5 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-stream_paused = false
-mix_target = 0
-bus = "Master"
-
-[node name="a3" type="AudioStreamPlayer" parent="Panel/button_audio"]
-stream = ExtResource( 6 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-stream_paused = false
-mix_target = 0
-bus = "Master"
-
-[node name="a4" type="AudioStreamPlayer" parent="Panel/button_audio"]
-stream = ExtResource( 7 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-stream_paused = false
-mix_target = 0
-bus = "Master"
+[node name="audio_ui" parent="Panel" instance=ExtResource( 3 )]
 
 [connection signal="button_down" from="Panel/Button" to="Panel" method="_on_Button_button_down"]
 [connection signal="button_down" from="Panel/Button2" to="Panel" method="_on_Button_button_down"]

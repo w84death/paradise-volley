@@ -173,9 +173,6 @@ _sections_unfolded = [ "Script" ]
 light_cull_mask = -1
 _sections_unfolded = [ "Light", "Shadow", "Transform" ]
 
-[node name="sfx_player" parent="system" index="5"]
-bus = "sfx_bus"
-
 [node name="animations" type="AnimationPlayer" parent="."]
 root_node = NodePath("..")
 autoplay = "demo"
