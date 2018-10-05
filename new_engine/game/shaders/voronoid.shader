@@ -5,6 +5,7 @@ uniform float UNIQ = 4323.1454;
 uniform float MAX_ITER = 128.0;
 uniform float SPEED = 0.2;
 uniform float EMMISION_POWER = 4.0;
+uniform bool MOVEMENT = false;
 
 uniform vec2 amplitude = vec2(0.5, 0.3);
 uniform vec2 frequency = vec2(.2, .2);
@@ -41,9 +42,12 @@ float wave(vec2 pos, float time) {
 }
 
 void vertex() {
-	VERTEX.x += wave(VERTEX.xz, TIME);
-	VERTEX.y += wave(VERTEX.yz, TIME);
-	//VERTEX.z += wave(VERTEX.xz, TIME);
+	if(MOVEMENT) {
+		VERTEX.x += wave(VERTEX.xz, TIME);
+		VERTEX.y += wave(VERTEX.yz, TIME);
+		VERTEX.z += wave(VERTEX.xz, TIME);
+	}
+	
 }
 
 void fragment() {

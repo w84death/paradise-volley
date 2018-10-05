@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/paradise_volley_logo.obj-6648411d662d9d11a26fa08590428e23.mesh"
+
+[deps]
+
+files=[ "res://.import/paradise_volley_logo.obj-6648411d662d9d11a26fa08590428e23.mesh" ]
+
+source_file="res://game/models/paradise_volley_logo.obj"
+dest_files=[ "res://.import/paradise_volley_logo.obj-6648411d662d9d11a26fa08590428e23.mesh", "res://.import/paradise_volley_logo.obj-6648411d662d9d11a26fa08590428e23.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
