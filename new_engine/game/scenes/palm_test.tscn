@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://game/maps/test/terrain.material" type="Material" id=1]
 [ext_resource path="res://system/code/terrain.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://game/materials/butterflies/insects.material" type="Material" id=20]
 [ext_resource path="res://game/materials/butterflies/insects_particles.material" type="Material" id=21]
 [ext_resource path="res://game/models/butterfly.obj" type="ArrayMesh" id=22]
+[ext_resource path="res://game/scenes/baloon.tscn" type="PackedScene" id=23]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -199,6 +200,37 @@ surfaces/2 = {
 "vertex_count": 240
 }
 _sections_unfolded = [ "surface_1", "surface_2", "surface_3" ]
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "idle"
+length = 16.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.4, 4.7, 4.7, 8.6, 11.3, 14.1, 16 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 126.892, 117.342, -166.242 ), Vector3( 131.393, 120.228, -169.28 ), Vector3( 131.393, 120.228, -156.58 ), Vector3( 131.393, 129.644, -156.58 ), Vector3( 112.576, 120.228, -156.58 ), Vector3( 116.043, 117.759, -158.919 ), Vector3( 121.49, 113.88, -162.596 ), Vector3( 126.892, 117.342, -166.242 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.9, 5.1, 8, 11, 16 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.311851, 60.3344, 0.704476 ), Vector3( 0, 60.7177, 0 ), Vector3( 1.94594, 60.7767, 3.47361 ), Vector3( -4.101, 57.217, 1.533 ), Vector3( 1.93348, 58.3411, 4.36775 ), Vector3( 0.311851, 60.3344, 0.704476 ) ]
+}
 
 [node name="island_a" type="Spatial"]
 
@@ -465,4 +497,16 @@ terrain_height = 64
 terrain_scale = 4.0
 rows = 24
 spacing = 16.0
+
+[node name="baloon" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1.96011, -0.000802744, 3.48683, 0.00770777, 3.99999, -0.00341201, -3.48682, 0.0083909, 1.9601, 129.897, 119.269, -168.27 )
+
+[node name="baloon_anim" type="AnimationPlayer" parent="baloon"]
+root_node = NodePath("..")
+autoplay = "idle"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/idle = SubResource( 6 )
+blend_times = [  ]
 

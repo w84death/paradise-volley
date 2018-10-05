@@ -36,7 +36,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Position3D/Camera:current")
+tracks/2/path = NodePath("terrain/Camera:current")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -210,12 +210,11 @@ playback_speed = 1.0
 anims/intro = SubResource( 2 )
 blend_times = [  ]
 
-[node name="Position3D" type="Position3D" parent="."]
-editor/display_folded = true
+[node name="terrain" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 27, 107 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Camera" type="Camera" parent="Position3D"]
+[node name="Camera" type="Camera" parent="terrain"]
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -230,18 +229,8 @@ near = 0.05
 far = 512.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="palm_test" parent="Position3D" instance=ExtResource( 3 )]
+[node name="palm_test" parent="terrain" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -27, -107 )
-
-[node name="grass_basic" parent="Position3D/palm_test" index="2"]
-amount = 4096
-rows = 64
-spacing = 4.0
-
-[node name="grass_dark" parent="Position3D/palm_test" index="3"]
-amount = 4096
-rows = 64
-spacing = 4.0
 
 [node name="gameplay" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
@@ -412,8 +401,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 
 [editable path="system"]
-
-[editable path="Position3D/palm_test"]
 
 [editable path="gameplay"]
 

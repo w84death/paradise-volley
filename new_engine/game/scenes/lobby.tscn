@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://system/theme.tres" type="Theme" id=1]
 [ext_resource path="res://game/code/lobby.gd" type="Script" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://game/scenes/logo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://system/system.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/maps/lobby/lobby_terrain.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game/scenes/GUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/scenes/baloon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/scenes/GUI.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -95,14 +96,114 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3, 3.5, 3.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3, 3.5, 6, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 25, 0 ), Vector3( 0, 25, 0 ), Vector3( 0, 385, 0 ), Vector3( 0, 25, 0 ) ]
+"values": [ Vector3( 0, 25, 0 ), Vector3( 0, 25, 0 ), Vector3( 0, 385, 0 ), Vector3( 0, 385, 0 ), Vector3( 0, 25, 0 ) ]
 }
 
 [sub_resource type="ShortCut" id=4]
 
+
+[sub_resource type="Animation" id=8]
+
+length = 15.0
+loop = false
+step = 0.1
+tracks/0/type = "animation"
+tracks/0/path = NodePath("camera/camera_anim")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "lobby_to_menu", "menu_idle" ),
+"times": PoolRealArray( 0, 3 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "popup_menu"
+} ]
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("../logo/logo_anim")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "menu", "menu_idle" ),
+"times": PoolRealArray( 0, 4 )
+}
+tracks/3/type = "animation"
+tracks/3/path = NodePath("baloon/baloon_anim")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": PoolStringArray( "menu_showcase", "menu_idle" ),
+"times": PoolRealArray( 0, 12.1 )
+}
+
+[sub_resource type="Animation" id=9]
+
+length = 8.0
+loop = false
+step = 0.1
+tracks/0/type = "animation"
+tracks/0/path = NodePath("camera/camera_anim")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "welcome_iddle" ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "animation"
+tracks/1/path = NodePath("../logo/logo_anim")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": PoolStringArray( "intro" ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "popup_welcome"
+} ]
+}
+tracks/3/type = "animation"
+tracks/3/path = NodePath("baloon/baloon_anim")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": PoolStringArray( "welcome_idle" ),
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=5]
 
@@ -194,84 +295,85 @@ tracks/1/keys = {
 "values": [ Vector3( -16.903, 0, 0 ), Vector3( -16.903, 0.47, 0 ), Vector3( -17.313, -0.742, 0 ), Vector3( -16.903, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=11]
 
-length = 5.0
-loop = false
-step = 0.1
-tracks/0/type = "animation"
-tracks/0/path = NodePath("camera/camera_anim")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"clips": PoolStringArray( "lobby_to_menu", "menu_idle" ),
-"times": PoolRealArray( 0, 3 )
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath("..")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 3 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "popup_menu"
-} ]
-}
-tracks/2/type = "animation"
-tracks/2/path = NodePath("../logo/logo_anim")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"clips": PoolStringArray( "menu", "menu_idle" ),
-"times": PoolRealArray( 0, 4 )
-}
-
-[sub_resource type="Animation" id=9]
-
+resource_name = "menu_idle"
 length = 8.0
-loop = false
+loop = true
 step = 0.1
-tracks/0/type = "animation"
-tracks/0/path = NodePath("camera/camera_anim")
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"clips": PoolStringArray( "welcome_iddle" ),
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0, 2.4, 5, 7.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 125.838, 134.123, 67.4992 ), Vector3( 125.838, 134.723, 69.3793 ), Vector3( 123.639, 135.42, 67.5262 ), Vector3( 124.796, 134.317, 67.512 ) ]
 }
-tracks/1/type = "animation"
-tracks/1/path = NodePath("../logo/logo_anim")
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"clips": PoolStringArray( "intro" ),
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0, 1.2, 4.5, 6.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 53.559, 0 ), Vector3( 1.00416, 53.5709, 1.36024 ), Vector3( -1.224, 52.577, 0.681 ), Vector3( -0.58, 53.024, 0.323 ) ]
 }
-tracks/2/type = "method"
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 1.8 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "popup_welcome"
-} ]
+
+[sub_resource type="Animation" id=10]
+
+resource_name = "menu_showcase"
+length = 12.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5, 8.2, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 139.016, 135.915, -195.674 ), Vector3( 139.016, 160.013, -4.09196 ), Vector3( 125.838, 140.576, 34.7802 ), Vector3( 125.838, 134.123, 67.4992 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.3, 4.5, 8.1, 9, 11, 11.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 28.209, 0 ), Vector3( 4.41565, 46.5774, 4.65088 ), Vector3( 0, 51.459, 0 ), Vector3( 1.25232, 50.3973, -1.16876 ), Vector3( 0, 50.369, 0 ), Vector3( -1.98188, 52.8314, -2.52952 ), Vector3( 0, 53.559, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+
+resource_name = "welcome_idle"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 139.016, 135.915, -195.674 ), Vector3( 133.206, 139.825, -197.134 ) ]
 }
 
 [node name="lobby" type="Control"]
@@ -295,7 +397,8 @@ __meta__ = {
 [node name="audio_ui" parent="." instance=ExtResource( 3 )]
 
 [node name="logo" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 66.8876, -34.3169 )
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.143, 174.332, 357.273 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="logo_anim" type="AnimationPlayer" parent="logo"]
@@ -822,16 +925,11 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_constants/line_spacing = 12
-text = "~ Krzysztof Jankowski
-Code, Models, Shaders, Graphics
+text = "~ P1X ~
+http://p1x.in
 
-~ Pieczarka ~
-Music, Sound Effects
-
-~ ~ ~
-
-~ P1X ~
-http://p1x.in"
+Dedicated page at:
+https://volley.p1x.in"
 align = 1
 valign = 1
 autowrap = true
@@ -1156,13 +1254,24 @@ _sections_unfolded = [ "Focus", "Rect" ]
 
 [node name="world" type="Spatial" parent="."]
 
+[node name="director" type="AnimationPlayer" parent="world"]
+root_node = NodePath("..")
+autoplay = "welcome"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/menu = SubResource( 8 )
+anims/welcome = SubResource( 9 )
+blend_times = [  ]
+
 [node name="system" parent="world" instance=ExtResource( 5 )]
 
 [node name="lobby_terrain" parent="world" instance=ExtResource( 6 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40819, -3.38175, 28.3446 )
 
 [node name="camera" type="Camera" parent="world"]
-transform = Transform( 0.990373, 0.0122561, -0.137881, 0, 0.996073, 0.08854, 0.138424, -0.0876876, 0.986484, -8.31469, 92.2317, 344.213 )
+transform = Transform( 1, -8.6141e-05, 0.000283926, 0, 0.956928, 0.290324, -0.000296706, -0.290324, 0.956928, -8.24, 183.517, 437.263 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -1188,18 +1297,25 @@ anims/menu_idle = SubResource( 6 )
 anims/welcome_iddle = SubResource( 7 )
 blend_times = [  ]
 
-[node name="director" type="AnimationPlayer" parent="world"]
+[node name="baloon" parent="world" instance=ExtResource( 7 )]
+transform = Transform( 2.37598, 0, 3.21787, 0, 4, 0, -3.21787, 0, 2.37598, 139.016, 135.915, -195.674 )
+
+[node name="baloon_anim" type="AnimationPlayer" parent="world/baloon"]
 root_node = NodePath("..")
-autoplay = "welcome"
+autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/menu = SubResource( 8 )
-anims/welcome = SubResource( 9 )
+anims/menu_idle = SubResource( 11 )
+anims/menu_showcase = SubResource( 10 )
+anims/welcome_idle = SubResource( 12 )
 blend_times = [  ]
 
-[node name="GUI" parent="." instance=ExtResource( 7 )]
+[node name="GUI" parent="." instance=ExtResource( 8 )]
 editor/display_folded = true
+
+[node name="overdraw" parent="GUI" index="2"]
+editor/display_folded = false
 
 [connection signal="pressed" from="center/welcome/group/group/menu/show_menu" to="." method="_on_show_menu_pressed"]
 [connection signal="pressed" from="center/welcome/group/group/menu/quit" to="." method="_on_quit_pressed"]
@@ -1213,5 +1329,7 @@ editor/display_folded = true
 [connection signal="pressed" from="center/settings/group/settings_to_menu" to="." method="_on_settings_to_menu_pressed"]
 
 [editable path="logo"]
+
+[editable path="world/lobby_terrain"]
 
 [editable path="GUI"]
