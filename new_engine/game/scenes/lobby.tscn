@@ -105,7 +105,7 @@ tracks/1/keys = {
 [sub_resource type="ShortCut" id=4]
 
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 
 length = 15.0
 loop = false
@@ -155,7 +155,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 12.1 )
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 
 length = 8.0
 loop = false
@@ -205,7 +205,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 
 length = 3.0
 loop = false
@@ -235,7 +235,7 @@ tracks/1/keys = {
 "values": [ Vector3( -20.433, 0.184, 0 ), Vector3( -43.543, 0.184, 0 ), Vector3( -8.153, 0.184, 0 ), Vector3( -5.026, -8.866, 0 ), Vector3( -6.563, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 
 length = 8.0
 loop = true
@@ -265,7 +265,7 @@ tracks/1/keys = {
 "values": [ Vector3( -6.563, 0, 0 ), Vector3( -7.093, 0, 0 ), Vector3( -4.345, -0.29, 0 ), Vector3( -4.549, -0.49, 0 ), Vector3( -6.176, -0.913, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 
 length = 8.0
 loop = true
@@ -295,7 +295,7 @@ tracks/1/keys = {
 "values": [ Vector3( -16.903, 0, 0 ), Vector3( -16.903, 0.47, 0 ), Vector3( -17.313, -0.742, 0 ), Vector3( -16.903, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 
 resource_name = "menu_idle"
 length = 8.0
@@ -326,9 +326,8 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 53.559, 0 ), Vector3( 1.00416, 53.5709, 1.36024 ), Vector3( -1.224, 52.577, 0.681 ), Vector3( -0.58, 53.024, 0.323 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 
-resource_name = "menu_showcase"
 length = 12.0
 loop = false
 step = 0.1
@@ -1253,6 +1252,7 @@ align = 1
 _sections_unfolded = [ "Focus", "Rect" ]
 
 [node name="world" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="director" type="AnimationPlayer" parent="world"]
 root_node = NodePath("..")
@@ -1260,18 +1260,26 @@ autoplay = "welcome"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/menu = SubResource( 8 )
-anims/welcome = SubResource( 9 )
+anims/menu = SubResource( 5 )
+anims/welcome = SubResource( 6 )
 blend_times = [  ]
 
 [node name="system" parent="world" instance=ExtResource( 5 )]
 
 [node name="lobby_terrain" parent="world" instance=ExtResource( 6 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40819, -3.38175, 28.3446 )
 
+[node name="body" parent="world/lobby_terrain/hamster" index="0"]
+transform = Transform( 2, 0, 0, 0, -1, 3.01992e-07, 0, -1.50996e-07, -2, 0, 0, 0 )
+
+[node name="usza" parent="world/lobby_terrain/hamster" index="2"]
+visible = false
+
+[node name="hamster5" parent="world/lobby_terrain" index="7"]
+transform = Transform( 0.657203, 0, -0.753714, 0, 1, 0, 0.753714, 0, 0.657203, 64.793, 20.9414, 93.3074 )
+
 [node name="camera" type="Camera" parent="world"]
-transform = Transform( 1, -8.6141e-05, 0.000283926, 0, 0.956928, 0.290324, -0.000296706, -0.290324, 0.956928, -8.24, 183.517, 437.263 )
+transform = Transform( 1, -8.61409e-05, 0.000283926, 0, 0.956928, 0.290324, -0.000296706, -0.290324, 0.956928, -8.24, 183.517, 437.263 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -1292,9 +1300,9 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/lobby_to_menu = SubResource( 5 )
-anims/menu_idle = SubResource( 6 )
-anims/welcome_iddle = SubResource( 7 )
+anims/lobby_to_menu = SubResource( 7 )
+anims/menu_idle = SubResource( 8 )
+anims/welcome_iddle = SubResource( 9 )
 blend_times = [  ]
 
 [node name="baloon" parent="world" instance=ExtResource( 7 )]
@@ -1306,8 +1314,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/menu_idle = SubResource( 11 )
-anims/menu_showcase = SubResource( 10 )
+anims/menu_idle = SubResource( 10 )
+anims/menu_showcase = SubResource( 11 )
 anims/welcome_idle = SubResource( 12 )
 blend_times = [  ]
 
@@ -1331,5 +1339,7 @@ editor/display_folded = false
 [editable path="logo"]
 
 [editable path="world/lobby_terrain"]
+
+[editable path="world/lobby_terrain/hamster"]
 
 [editable path="GUI"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://game/maps/basic_terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/maps/lobby/terrain.material" type="Material" id=2]
@@ -9,16 +9,17 @@
 [ext_resource path="res://game/maps/lobby/palms_particle.material" type="Material" id=7]
 [ext_resource path="res://game/maps/lobby/insects_particles.material" type="Material" id=8]
 [ext_resource path="res://game/scenes/torch.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/scenes/hamster.tscn" type="PackedScene" id=10]
 
 [node name="lobby_terrain" type="Spatial"]
 
 [node name="basic_terrain" parent="." instance=ExtResource( 1 )]
-editor/display_folded = true
 
 [node name="terrain" parent="basic_terrain" index="0"]
 material/0 = ExtResource( 2 )
 
 [node name="water" parent="basic_terrain" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363922, -3.8147e-06, 0.18795 )
 material/0 = ExtResource( 3 )
 
 [node name="grass_basic" parent="basic_terrain" index="2"]
@@ -45,6 +46,30 @@ transform = Transform( -0.0784031, -0.247687, -0.965662, -0.157748, 0.959523, -0
 
 [node name="torch3" parent="." instance=ExtResource( 9 )]
 transform = Transform( -0.938772, 0.0576052, -0.339688, 0.151599, 0.954417, -0.257111, 0.309393, -0.292865, -0.904713, 112.6, 20.5474, 77.9254 )
+
+[node name="hamster" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.715112, 0, -0.69901, 0, 1, 0, 0.69901, 0, 0.715112, 113.515, 19.898, 88.7808 )
+
+[node name="hamster2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 107.028, 22.0166, 74.9121 )
+
+[node name="hamster4" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.889732, 0, 0.456483, 0, 1, 0, -0.456483, 0, 0.889732, 86.8265, 20.1716, 89.5671 )
+
+[node name="hamster5" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.634737, 0, -0.772728, 0, 1, 0, 0.772728, 0, 0.634737, 64.793, 20.9414, 93.3074 )
+
+[node name="hamster6" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.90107, 0, 0.433674, 0, 1, 0, -0.433674, 0, 0.90107, 2.0989, 22.022, 95.343 )
+
+[node name="hamster7" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.90107, 0, 0.433674, 0.126075, 0.95681, -0.261953, -0.414944, 0.290713, 0.862153, 55.6932, 13.1717, 156.682 )
+
+[node name="hamster8" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.880343, -0.0294345, -0.473423, -0.10683, 0.960127, -0.258348, 0.46215, 0.278011, 0.842097, 62.689, 13.7944, 156.682 )
+
+[node name="hamster3" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.969531, -0.0358271, 0.242334, 0.0518298, 0.996853, -0.0599845, -0.239423, 0.070717, 0.968337, 100.577, 20.3056, 82.974 )
 
 
 [editable path="basic_terrain"]

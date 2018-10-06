@@ -1,13 +1,15 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://system/code/exit_on_esc.gd" type="Script" id=1]
 [ext_resource path="res://system/system.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/scenes/palm_test.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/scenes/gameplay.tscn" type="PackedScene" id=4]
-[ext_resource path="res://system/theme.tres" type="Theme" id=5]
-[ext_resource path="res://system/fonts/paragraph.tres" type="DynamicFont" id=6]
-[ext_resource path="res://system/corners.tscn" type="PackedScene" id=7]
-[ext_resource path="res://system/code/fps.gd" type="Script" id=8]
+[ext_resource path="res://game/maps/turkusania/turkusania.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/materials/plasma/plasma.material" type="Material" id=4]
+[ext_resource path="res://game/materials/player/player_red.material" type="Material" id=5]
+[ext_resource path="res://game/scenes/gameplay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://system/theme.tres" type="Theme" id=7]
+[ext_resource path="res://system/fonts/paragraph.tres" type="DynamicFont" id=8]
+[ext_resource path="res://system/corners.tscn" type="PackedScene" id=9]
+[ext_resource path="res://system/code/fps.gd" type="Script" id=10]
 
 [sub_resource type="Animation" id=1]
 
@@ -36,7 +38,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("terrain/Camera:current")
+tracks/2/path = NodePath("world/Camera:current")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -102,6 +104,26 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 110.0, 110.0, 75.0 ]
 }
+
+[sub_resource type="CylinderMesh" id=5]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
+top_radius = 1.4
+bottom_radius = 1.4
+height = 7.5
+radial_segments = 64
+rings = 4
+
+[sub_resource type="CylinderMesh" id=6]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+flip_faces = false
+top_radius = 1.0
+bottom_radius = 1.0
+height = 7.0
+radial_segments = 64
+rings = 4
 
 [sub_resource type="Animation" id=3]
 
@@ -210,11 +232,11 @@ playback_speed = 1.0
 anims/intro = SubResource( 2 )
 blend_times = [  ]
 
-[node name="terrain" type="Position3D" parent="."]
+[node name="world" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 27, 107 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Camera" type="Camera" parent="terrain"]
+[node name="Camera" type="Camera" parent="world"]
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -229,10 +251,50 @@ near = 0.05
 far = 512.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="palm_test" parent="terrain" instance=ExtResource( 3 )]
+[node name="turkusania" parent="world" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -27, -107 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="gameplay" parent="." instance=ExtResource( 4 )]
+[node name="lives" type="Position3D" parent="world"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.22, 0 )
+visible = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="red1" type="MeshInstance" parent="world/lives"]
+transform = Transform( -0.621857, 0, -0.783131, 0, 1, 0, 0.783131, 0, -0.621857, -21.0603, -1.66257, -28.7699 )
+visible = false
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "material", "mesh" ]
+
+[node name="red2" type="MeshInstance" parent="world/lives"]
+transform = Transform( -0.621857, 0, -0.783131, 0, 1, 0, 0.783131, 0, -0.621857, -21.0603, -1.66257, -28.7699 )
+visible = false
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "material", "mesh" ]
+
+[node name="gameplay" parent="." instance=ExtResource( 6 )]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 20.6262, 78.1126 )
 
@@ -240,7 +302,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 20.6262, 78.1126 )
 editor/display_folded = true
 
 [node name="GUI" type="Control" parent="."]
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -251,7 +312,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 5 )
+theme = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Theme", "theme" ]
 __meta__ = {
 "_edit_lock_": true
@@ -289,7 +350,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 8 )
 text = "Version 2.0/alpha1"
 align = 1
 valign = 1
@@ -298,7 +359,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Custom Colors", "Custom Constants", "Custom Fonts", "custom_fonts", "custom_fonts/font" ]
 
-[node name="corners" parent="GUI" instance=ExtResource( 7 )]
+[node name="corners" parent="GUI" instance=ExtResource( 9 )]
 
 [node name="top" type="Control" parent="GUI"]
 editor/display_folded = true
@@ -355,11 +416,10 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 8 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Script" ]
 
 [node name="overdraw" type="Control" parent="GUI"]
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
