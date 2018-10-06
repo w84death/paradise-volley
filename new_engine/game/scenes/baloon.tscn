@@ -137,7 +137,6 @@ material/2 = null
 material/3 = null
 _sections_unfolded = [ "Transform", "mesh" ]
 
-[node name="torch" type="Spatial" parent="." instance=ExtResource( 3 )]
+[node name="torch" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -6.90067, 0 )
-_sections_unfolded = [ "Transform" ]
 

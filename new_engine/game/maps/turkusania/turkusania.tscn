@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://game/maps/test/terrain.material" type="Material" id=1]
 [ext_resource path="res://system/code/terrain.gd" type="Script" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://game/models/butterfly.obj" type="ArrayMesh" id=22]
 [ext_resource path="res://game/scenes/baloon.tscn" type="PackedScene" id=23]
 [ext_resource path="res://game/scenes/hamster.tscn" type="PackedScene" id=24]
+[ext_resource path="res://game/scenes/logo.tscn" type="PackedScene" id=25]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -517,11 +518,17 @@ transform = Transform( 0.886417, -0.118999, 0.447331, 0.0402431, 0.982543, 0.181
 [node name="hamster6" parent="." instance=ExtResource( 24 )]
 transform = Transform( -0.483068, -0.108577, 0.868825, 0.0555766, 0.986478, 0.15418, -0.873817, 0.122766, -0.470501, -25.795, 21.066, 85.7644 )
 
+[node name="hamster9" parent="." instance=ExtResource( 24 )]
+transform = Transform( -0.931635, -0.00430572, 0.36337, 0.0555766, 0.986478, 0.15418, -0.359119, 0.163835, -0.918798, -11.5436, 21.066, 85.7644 )
+
+[node name="hamster10" parent="." instance=ExtResource( 24 )]
+transform = Transform( -0.716546, -0.217081, 0.662902, 0.102035, 0.907499, 0.407471, -0.690037, 0.359612, -0.628114, -14.3435, 19.6639, 93.3279 )
+
 [node name="hamster7" parent="." instance=ExtResource( 24 )]
 transform = Transform( -0.91038, 0.11348, -0.397909, 0.0555766, 0.986478, 0.15418, 0.410025, 0.118248, -0.904377, 19.6364, 21.066, 91.1641 )
 
 [node name="hamster8" parent="." instance=ExtResource( 24 )]
-transform = Transform( -0.91038, 0.11348, -0.397909, -0.0562253, 0.91881, 0.390675, 0.409936, 0.378035, -0.830086, 11.3475, 18.8792, 99.5219 )
+transform = Transform( -0.91038, 0.11348, -0.397909, -0.0562253, 0.91881, 0.390675, 0.409936, 0.378035, -0.830086, 11.3475, 19.8955, 92.7104 )
 
 [node name="hamster2" parent="." instance=ExtResource( 24 )]
 transform = Transform( 0.99554, -0.0239047, -0.091263, 0.0402431, 0.982543, 0.181631, 0.085328, -0.184494, 0.979123, -11.1159, 20.5634, 56.9004 )
@@ -534,4 +541,7 @@ transform = Transform( 0.472554, 0.141449, -0.869877, 0.0402431, 0.982543, 0.181
 
 [node name="hamster5" parent="." instance=ExtResource( 24 )]
 transform = Transform( 0.467585, 0.05943, -0.881948, -0.0616332, 0.997501, 0.0345403, 0.881797, 0.0382068, 0.470079, 31.8673, 19.9541, 76.4581 )
+
+[node name="logo" parent="." instance=ExtResource( 25 )]
+transform = Transform( 0.959042, 0, 0.283262, 0, 1, 0, -0.283262, 0, 0.959042, -32.1212, 84.7591, -72.8668 )
 

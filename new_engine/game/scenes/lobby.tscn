@@ -400,6 +400,18 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.143, 174.332, 357.273 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="SpotLight" parent="logo/coin" index="0"]
+light_cull_mask = -1
+
+[node name="SpotLight3" parent="logo/coin" index="1"]
+light_cull_mask = -1
+
+[node name="SpotLight2" parent="logo/coin" index="2"]
+light_cull_mask = -1
+
+[node name="SpotLight4" parent="logo/coin" index="3"]
+light_cull_mask = -1
+
 [node name="logo_anim" type="AnimationPlayer" parent="logo"]
 root_node = NodePath("..")
 autoplay = ""
@@ -412,7 +424,6 @@ anims/menu_idle = SubResource( 3 )
 blend_times = [  ]
 
 [node name="center" type="Control" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -425,7 +436,6 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 
 [node name="welcome" type="Panel" parent="center"]
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -476,7 +486,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_constants/line_spacing = 12
-text = "Welcome to version 2.0-beta1"
+text = "Welcome to version 2.0-beta2"
 align = 1
 valign = 1
 autowrap = true
@@ -1252,7 +1262,6 @@ align = 1
 _sections_unfolded = [ "Focus", "Rect" ]
 
 [node name="world" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="director" type="AnimationPlayer" parent="world"]
 root_node = NodePath("..")
@@ -1266,17 +1275,19 @@ blend_times = [  ]
 
 [node name="system" parent="world" instance=ExtResource( 5 )]
 
+[node name="SUN" parent="world/system" index="0"]
+light_cull_mask = -1
+
 [node name="lobby_terrain" parent="world" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40819, -3.38175, 28.3446 )
 
-[node name="body" parent="world/lobby_terrain/hamster" index="0"]
-transform = Transform( 2, 0, 0, 0, -1, 3.01992e-07, 0, -1.50996e-07, -2, 0, 0, 0 )
-
-[node name="usza" parent="world/lobby_terrain/hamster" index="2"]
-visible = false
+[node name="hamster" parent="world/lobby_terrain" index="4"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 113.515, 19.898, 88.7808 )
 
 [node name="hamster5" parent="world/lobby_terrain" index="7"]
-transform = Transform( 0.657203, 0, -0.753714, 0, 1, 0, 0.753714, 0, 0.657203, 64.793, 20.9414, 93.3074 )
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.793, 20.9414, 93.3074 )
 
 [node name="camera" type="Camera" parent="world"]
 transform = Transform( 1, -8.61409e-05, 0.000283926, 0, 0.956928, 0.290324, -0.000296706, -0.290324, 0.956928, -8.24, 183.517, 437.263 )
@@ -1338,8 +1349,12 @@ editor/display_folded = false
 
 [editable path="logo"]
 
+[editable path="world/system"]
+
 [editable path="world/lobby_terrain"]
 
 [editable path="world/lobby_terrain/hamster"]
+
+[editable path="world/lobby_terrain/hamster5"]
 
 [editable path="GUI"]

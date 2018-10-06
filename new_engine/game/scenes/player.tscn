@@ -175,8 +175,7 @@ player_id = 1
 bot = false
 
 [node name="red" type="MeshInstance" parent="."]
-editor/display_folded = true
-transform = Transform( 1.62921e-07, 1, 8.74228e-08, 1, -1.62921e-07, 0, 1.4243e-14, 8.74228e-08, -1, 0, 0, 0 )
+transform = Transform( -0.258819, 0.965926, 7.31306e-08, 0.965926, 0.258819, 2.11373e-08, 1.48944e-09, 7.61095e-08, -1, 0, 0, 0 )
 visible = false
 layers = 1
 material_override = null
@@ -256,7 +255,7 @@ _sections_unfolded = [ "Flags", "Transform" ]
 
 [node name="blue" type="MeshInstance" parent="."]
 editor/display_folded = true
-transform = Transform( 1.62921e-07, -1, -1.50996e-07, -1, -1.62921e-07, 0, -2.46003e-14, 1.50996e-07, -1, 0, 0, 0 )
+transform = Transform( -0.258819, -0.965926, -1.34538e-07, -0.965926, 0.258819, 3.75912e-08, -1.48945e-09, 1.39683e-07, -1, 0, 0, 0 )
 visible = false
 layers = 1
 material_override = null
