@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Paradise Volley v2.0 - GodotCon/PGA"
+config/name="Paradise Volley v2.0 - PGA Edition"
 run/main_scene="res://main.tscn"
 boot_splash/image="res://system/images/splash.png"
 boot_splash/bg_color=Color( 0.27451, 0.27451, 0.27451, 1 )

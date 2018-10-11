@@ -444,7 +444,7 @@ anchor_bottom = 0.0
 margin_left = -128.0
 margin_top = 32.0
 margin_right = 128.0
-margin_bottom = 177.0
+margin_bottom = 201.0
 rect_min_size = Vector2( 256, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -478,7 +478,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 208.0
-margin_bottom = 14.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -486,7 +486,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_constants/line_spacing = 12
-text = "Welcome to version 2.0-beta2"
+text = "Paradise Volley 2.0 (beta)
+~ PGA Edition  ~"
 align = 1
 valign = 1
 autowrap = true
@@ -500,9 +501,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 26.0
+margin_top = 52.0
 margin_right = 208.0
-margin_bottom = 102.0
+margin_bottom = 128.0
 rect_min_size = Vector2( 0, 64 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -655,7 +656,6 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1331,7 +1331,6 @@ anims/welcome_idle = SubResource( 12 )
 blend_times = [  ]
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
-editor/display_folded = true
 
 [node name="overdraw" parent="GUI" index="2"]
 editor/display_folded = false
@@ -1339,6 +1338,7 @@ editor/display_folded = false
 [connection signal="pressed" from="center/welcome/group/group/menu/show_menu" to="." method="_on_show_menu_pressed"]
 [connection signal="pressed" from="center/welcome/group/group/menu/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="center/menu/group/show_practice" to="." method="_on_show_practice_pressed"]
+[connection signal="pressed" from="center/menu/group/duel" to="." method="_on_duel_pressed"]
 [connection signal="pressed" from="center/menu/group/show_settings" to="." method="_on_show_settings_pressed"]
 [connection signal="pressed" from="center/menu/group/show_credits" to="." method="_on_show_credits_pressed"]
 [connection signal="pressed" from="center/menu/group/quit" to="." method="_on_quit_pressed"]

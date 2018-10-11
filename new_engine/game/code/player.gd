@@ -3,6 +3,7 @@ extends RigidBody
 export var type = 0
 export var player_id = 0
 export var bot = false
+export var game_paused = true
 
 var speed = 1200
 var jump_speed = 2200
@@ -34,26 +35,26 @@ func get_type():
 	return type
 
 func _physics_process(delta):
-	
-	if Input.is_action_pressed(right_button[player_id]) or (bot and randi()%100 < 1 ):
-		velocity = Vector3(1, 0, 0)
-	elif Input.is_action_pressed(left_button[player_id]) or (bot and randi()%100 < 1 ):
-		velocity = Vector3(-1, 0, 0)
-	else:
-		velocity = Vector3(0,0,0)
-	
-	velocity = velocity.normalized() * speed * delta
-	#apply_impulse(Vector3(0,0,0), velocity)
-	set_axis_velocity(velocity)
-
-	if on_floor and (Input.is_action_pressed(jump_button[player_id]) or (bot and randi()%100 < 1 )):
-		play_jump()
-		velocity = Vector3(0, 1, 0)
-		velocity = velocity.normalized() * jump_speed * delta
-		set_axis_velocity(velocity)
-		on_floor = false
+	if not game_paused:
+		if Input.is_action_pressed(right_button[player_id]) or (bot and randi()%100 < 1 ):
+			velocity = Vector3(1, 0, 0)
+		elif Input.is_action_pressed(left_button[player_id]) or (bot and randi()%100 < 1 ):
+			velocity = Vector3(-1, 0, 0)
+		else:
+			velocity = Vector3(0,0,0)
 		
-	is_on_floor()
+		velocity = velocity.normalized() * speed * delta
+		#apply_impulse(Vector3(0,0,0), velocity)
+		set_axis_velocity(velocity)
+	
+		if on_floor and (Input.is_action_pressed(jump_button[player_id]) or (bot and randi()%100 < 1 )):
+			play_jump()
+			velocity = Vector3(0, 1, 0)
+			velocity = velocity.normalized() * jump_speed * delta
+			set_axis_velocity(velocity)
+			on_floor = false
+			
+		is_on_floor()
 	
 func is_on_floor():
 	var t = -1
@@ -73,5 +74,4 @@ func play_jump():
 		return
 	randomize()
 	sound_player.stream = sfx[player_id]
-	sound_player.play()		
-		
+	sound_player.play()

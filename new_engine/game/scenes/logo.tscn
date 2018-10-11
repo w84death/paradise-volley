@@ -424,6 +424,7 @@ _sections_unfolded = [ "Light", "Transform" ]
 
 [node name="buterfly" type="MeshInstance" parent="."]
 transform = Transform( 0.930427, 0.311745, 0.192667, 0.124225, 0.226319, -0.966099, -0.344781, 0.922819, 0.171847, 13.2207, 8.71565, 3.10389 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -441,6 +442,7 @@ _sections_unfolded = [ "mesh" ]
 
 [node name="buterfly2" type="MeshInstance" parent="."]
 transform = Transform( 0.723213, 0.429575, -0.85582, -0.590159, -0.644636, -0.822288, -0.754106, 0.916466, -0.177243, -12.5017, 6.91376, 6.26456 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -458,6 +460,7 @@ _sections_unfolded = [ "Transform", "mesh" ]
 
 [node name="buterfly3" type="MeshInstance" parent="."]
 transform = Transform( 0.79765, 0.0375936, -0.601948, -0.584338, 0.295308, -0.755872, 0.149344, 0.954662, 0.25752, -5.77808, -10.5533, 3.447 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1

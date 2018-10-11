@@ -49,6 +49,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath("gameplay")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 7.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_game"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 
@@ -190,6 +204,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Script" ]
 
 [node name="system" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
 
 [node name="SUN" parent="system" index="0"]
 light_cull_mask = -1
@@ -208,7 +223,7 @@ blend_times = [  ]
 editor/display_folded = true
 
 [node name="sky_camera" type="Camera" parent="cameras"]
-transform = Transform( 1, 0, 0, 0, 0.970196, 0.242322, 0, -0.242322, 0.970196, 0, 6.34016, 479.878 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 27, 107 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -216,8 +231,8 @@ h_offset = 0.0
 v_offset = 0.0
 doppler_tracking = 0
 projection = 0
-current = true
-fov = 110.0
+current = false
+fov = 75.0
 size = 1.0
 near = 0.05
 far = 1024.0
@@ -295,7 +310,6 @@ material/0 = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "material", "mesh" ]
 
 [node name="gameplay" parent="." instance=ExtResource( 6 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 20.6262, 78.1126 )
 
 [node name="torch" parent="gameplay/cort" index="6"]
@@ -434,6 +448,7 @@ __meta__ = {
 }
 
 [node name="fade" type="ColorRect" parent="GUI/overdraw"]
+self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
