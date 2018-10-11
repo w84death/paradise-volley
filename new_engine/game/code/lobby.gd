@@ -73,12 +73,12 @@ func _on_show_credits_pressed():
 
 func _on_play_practice_pressed():
 	$audio_ui.click()
-	# set game_type to 0
+	ProjectSettings.set_setting('game_type', 0)
 	get_tree().change_scene('game/scenes/game.tscn')
 
 
 func _on_duel_pressed():
 	$audio_ui.click()
-	# set game_type to 1
+	ProjectSettings.set_setting('game_type', 1)
 	get_tree().change_scene('game/scenes/game.tscn')
 

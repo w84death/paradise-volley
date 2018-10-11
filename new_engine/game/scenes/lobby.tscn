@@ -553,7 +553,7 @@ group = null
 text = "LAND ON ISLAND"
 flat = false
 align = 1
-_sections_unfolded = [ "shortcut" ]
+_sections_unfolded = [ "Rect", "shortcut" ]
 
 [node name="quit" type="Button" parent="center/welcome/group/group/menu"]
 anchor_left = 0.0

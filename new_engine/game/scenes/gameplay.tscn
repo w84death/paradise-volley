@@ -40,8 +40,6 @@ absorbent = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, -20 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-game_mode = 0
-game_paused = true
 
 [node name="cort" parent="." instance=ExtResource( 2 )]
 

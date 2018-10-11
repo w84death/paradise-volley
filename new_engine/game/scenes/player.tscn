@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://game/code/player.gd" type="Script" id=1]
-[ext_resource path="res://game/materials/hamster/usza.png" type="Texture" id=2]
-[ext_resource path="res://game/materials/hamster/ocza.png" type="Texture" id=3]
+[ext_resource path="res://game/scenes/player_red.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/scenes/player_blue.tscn" type="PackedScene" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -11,132 +11,7 @@ rough = false
 bounce = 0.2
 absorbent = false
 
-[sub_resource type="CapsuleMesh" id=2]
-
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-flip_faces = false
-radius = 1.0
-mid_height = 1.0
-radial_segments = 16
-rings = 8
-
-[sub_resource type="SpatialMaterial" id=3]
-
-render_priority = 0
-flags_transparent = true
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-flags_do_not_receive_shadows = false
-flags_disable_ambient_light = false
-flags_ensure_correct_normals = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_billboard_keep_scale = false
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 1, 0, 0, 0.627451 )
-metallic = 0.5
-metallic_specular = 1.0
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = true
-refraction_scale = 0.05
-refraction_texture_channel = 0
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_mode = 0
-_sections_unfolded = [ "Albedo", "Metallic", "Refraction" ]
-
-[sub_resource type="SpatialMaterial" id=4]
-
-render_priority = 0
-flags_transparent = true
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-flags_do_not_receive_shadows = false
-flags_disable_ambient_light = false
-flags_ensure_correct_normals = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_billboard_keep_scale = false
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 0, 0.742188, 1, 0.627451 )
-metallic = 0.5
-metallic_specular = 1.0
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = true
-refraction_scale = 0.05
-refraction_texture_channel = 0
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_mode = 0
-_sections_unfolded = [ "Albedo", "Distance Fade", "Flags", "Metallic", "Refraction" ]
-
-[sub_resource type="CapsuleShape" id=5]
+[sub_resource type="CapsuleShape" id=2]
 
 margin = 0.04
 radius = 1.0
@@ -173,168 +48,17 @@ _sections_unfolded = [ "Axis Lock", "Collision", "Transform", "material" ]
 type = 0
 player_id = 1
 bot = false
+game_paused = true
 
-[node name="red" type="MeshInstance" parent="."]
-transform = Transform( -0.258819, 0.965926, 7.31306e-08, 0.965926, 0.258819, 2.11373e-08, 1.48944e-09, 7.61095e-08, -1, 0, 0, 0 )
+[node name="red" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.258819, 0.965926, 1.50996e-07, 0.965926, 0.258819, 2.11373e-08, -1.86635e-08, 1.51321e-07, -1, 0, 0, 0 )
 visible = false
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
-skeleton = NodePath("..")
-material/0 = SubResource( 3 )
-_sections_unfolded = [ "Transform", "material" ]
 
-[node name="usza2" type="Sprite3D" parent="red"]
-transform = Transform( 1, -3.0619e-07, 4.37285e-07, 3.0619e-07, -0.34202, -0.939693, 4.37285e-07, 0.939693, -0.34202, -3.09008e-07, -4.14533e-08, 0.948341 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-centered = true
-offset = Vector2( 0, 0 )
-flip_h = false
-flip_v = false
-modulate = Color( 1, 1, 1, 1 )
-opacity = 1.0
-pixel_size = 0.01
-axis = 2
-transparent = true
-shaded = true
-double_sided = true
-alpha_cut = 2
-texture = ExtResource( 2 )
-vframes = 1
-hframes = 1
-frame = 0
-region_enabled = false
-region_rect = Rect2( 0, 0, 0, 0 )
-_sections_unfolded = [ "Flags" ]
-
-[node name="ocza2" type="Sprite3D" parent="red"]
-transform = Transform( 0.5, -1.93983e-07, 2.64571e-07, 1.0546e-07, -0.286788, -0.409576, 3.10654e-07, 0.409576, -0.286788, -3.53262e-07, 0.796923, 1.08415 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-centered = true
-offset = Vector2( 0, 0 )
-flip_h = false
-flip_v = false
-modulate = Color( 1, 1, 1, 1 )
-opacity = 1.0
-pixel_size = 0.01
-axis = 2
-transparent = true
-shaded = false
-double_sided = true
-alpha_cut = 0
-texture = ExtResource( 3 )
-vframes = 1
-hframes = 1
-frame = 0
-region_enabled = false
-region_rect = Rect2( 0, 0, 0, 0 )
-_sections_unfolded = [ "Flags", "Transform" ]
-
-[node name="blue" type="MeshInstance" parent="."]
-editor/display_folded = true
-transform = Transform( -0.258819, -0.965926, -1.34538e-07, -0.965926, 0.258819, 3.75912e-08, -1.48945e-09, 1.39683e-07, -1, 0, 0, 0 )
+[node name="blue" parent="." instance=ExtResource( 3 )]
 visible = false
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
-skeleton = NodePath("..")
-material/0 = SubResource( 4 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="usza" type="Sprite3D" parent="blue"]
-transform = Transform( 1, -3.0619e-07, 4.37285e-07, 3.0619e-07, -0.34202, -0.939693, 4.37285e-07, 0.939693, -0.34202, -3.09008e-07, -4.14533e-08, 0.948341 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-centered = true
-offset = Vector2( 0, 0 )
-flip_h = false
-flip_v = false
-modulate = Color( 1, 1, 1, 1 )
-opacity = 1.0
-pixel_size = 0.01
-axis = 2
-transparent = true
-shaded = true
-double_sided = true
-alpha_cut = 2
-texture = ExtResource( 2 )
-vframes = 1
-hframes = 1
-frame = 0
-region_enabled = false
-region_rect = Rect2( 0, 0, 0, 0 )
-_sections_unfolded = [ "Flags" ]
-
-[node name="ocza" type="Sprite3D" parent="blue"]
-transform = Transform( 0.5, -1.93983e-07, 2.64571e-07, 1.0546e-07, -0.286788, -0.409576, 3.10654e-07, 0.409576, -0.286788, -3.53262e-07, 0.796923, 1.08415 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-centered = true
-offset = Vector2( 0, 0 )
-flip_h = false
-flip_v = false
-modulate = Color( 1, 1, 1, 1 )
-opacity = 1.0
-pixel_size = 0.01
-axis = 2
-transparent = true
-shaded = false
-double_sided = true
-alpha_cut = 0
-texture = ExtResource( 3 )
-vframes = 1
-hframes = 1
-frame = 0
-region_enabled = false
-region_rect = Rect2( 0, 0, 0, 0 )
-_sections_unfolded = [ "Flags", "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 disabled = false
 
 [node name="player_player" type="AudioStreamPlayer" parent="."]
