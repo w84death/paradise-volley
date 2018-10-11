@@ -397,7 +397,7 @@ __meta__ = {
 
 [node name="logo" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.143, 174.332, 357.273 )
+transform = Transform( 0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, 13.6222, 90.7396, 129.389 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="SpotLight" parent="logo/coin" index="0"]
@@ -582,13 +582,14 @@ _sections_unfolded = [ "group" ]
 
 [node name="menu" type="Panel" parent="center"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -96.0
+margin_top = 7.0
 margin_right = 96.0
-margin_bottom = 246.0
+margin_bottom = 253.0
 rect_min_size = Vector2( 192, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -742,13 +743,14 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="practice" type="Panel" parent="center"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -128.0
-margin_right = 128.0
-margin_bottom = 221.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.0
+margin_top = -110.5
+margin_right = 134.0
+margin_bottom = 110.5
 rect_min_size = Vector2( 256, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -781,8 +783,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 208.0
-margin_bottom = 92.0
+margin_right = 220.0
+margin_bottom = 66.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -804,9 +806,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 104.0
-margin_right = 208.0
-margin_bottom = 180.0
+margin_top = 78.0
+margin_right = 220.0
+margin_bottom = 154.0
 rect_min_size = Vector2( 0, 64 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -822,8 +824,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 40.0
-margin_right = 168.0
+margin_left = 46.0
+margin_right = 174.0
 margin_bottom = 76.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -885,14 +887,14 @@ _sections_unfolded = [ "group" ]
 
 [node name="credits" type="Panel" parent="center"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -128.0
-margin_top = -64.0
+margin_top = -105.0
 margin_right = 128.0
-margin_bottom = 277.0
+margin_bottom = 105.0
 rect_min_size = Vector2( 256, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -926,7 +928,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 208.0
-margin_bottom = 248.0
+margin_bottom = 118.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -952,9 +954,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 260.0
+margin_top = 130.0
 margin_right = 208.0
-margin_bottom = 292.0
+margin_bottom = 162.0
 rect_min_size = Vector2( 0, 32 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -992,13 +994,14 @@ _sections_unfolded = [ "group" ]
 
 [node name="settings" type="Panel" parent="center"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -256.0
+margin_top = -104.5
 margin_right = 256.0
-margin_bottom = 209.0
+margin_bottom = 104.5
 rect_min_size = Vector2( 512, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1290,7 +1293,7 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.793, 20.9414, 93.3074 )
 
 [node name="camera" type="Camera" parent="world"]
-transform = Transform( 1, -8.61409e-05, 0.000283926, 0, 0.956928, 0.290324, -0.000296706, -0.290324, 0.956928, -8.24, 183.517, 437.263 )
+transform = Transform( 1, 0, 0, 0, 0.993446, 0.114296, 0, -0.114296, 0.993446, 47.919, 90.592, 210.533 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -1317,7 +1320,7 @@ anims/welcome_iddle = SubResource( 9 )
 blend_times = [  ]
 
 [node name="baloon" parent="world" instance=ExtResource( 7 )]
-transform = Transform( 2.37598, 0, 3.21787, 0, 4, 0, -3.21787, 0, 2.37598, 139.016, 135.915, -195.674 )
+transform = Transform( 2.37598, 0, 3.21787, 0, 4, 0, -3.21787, 0, 2.37598, 125.838, 134.123, 67.4992 )
 
 [node name="baloon_anim" type="AnimationPlayer" parent="world/baloon"]
 root_node = NodePath("..")

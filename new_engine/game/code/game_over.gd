@@ -14,4 +14,5 @@ func _on_restart_pressed():
 	get_tree().change_scene('game/scenes/game.tscn')
 
 func _on_menu_pressed():
+	ProjectSettings.set_setting('force_menu', true)
 	get_tree().change_scene('game/scenes/lobby.tscn')

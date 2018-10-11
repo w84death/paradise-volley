@@ -1,7 +1,8 @@
 extends Control
 
 func _ready():
-	pass
+	if ProjectSettings.get_setting('force_menu'):
+		$world/director.play('menu')
 
 
 # >> QUIT <<

@@ -160,7 +160,7 @@ rings = 4
 [sub_resource type="Animation" id=7]
 
 resource_name = "fade"
-length = 1.0
+length = 2.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -170,10 +170,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, -1.24, -36.729 ), Vector3( 0, -1.24, 8.121 ) ]
+"values": [ Vector3( 0, -1.24, -512 ), Vector3( 0, -1.24, -36.729 ), Vector3( 0, -1.24, -19.389 ), Vector3( 0, -1.24, 64 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -307,13 +307,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49748, -27, -107.151 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="totems" type="Position3D" parent="world"]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.22, 0 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Script", "Transform" ]
 
 [node name="red" type="Spatial" parent="world/totems"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2821, -1.33765, -28.701 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, -1.338, -28.701 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Script", "Transform" ]
 
@@ -350,9 +349,9 @@ material/0 = ExtResource( 7 )
 _sections_unfolded = [ "Transform", "material", "mesh" ]
 
 [node name="blue" type="Spatial" parent="world/totems"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5299, -3.00699, -26.7412 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1.507, -26.741 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Script" ]
+_sections_unfolded = [ "Script", "Transform" ]
 
 [node name="plasma" type="MeshInstance" parent="world/totems/blue"]
 transform = Transform( -0.621857, 0, -0.783131, 0, 1, 0, 0.783131, 0, -0.621857, 0, 0, 0 )
@@ -419,7 +418,7 @@ material/0 = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="play" type="MeshInstance" parent="world"]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -1.24, -36.729 )
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -1.24, -512 )
 layers = 1
 material_override = null
 cast_shadow = 1
