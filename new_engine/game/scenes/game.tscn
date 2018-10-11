@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://system/code/exit_on_esc.gd" type="Script" id=1]
 [ext_resource path="res://system/system.tscn" type="PackedScene" id=2]
@@ -8,11 +8,15 @@
 [ext_resource path="res://game/materials/plasma/plasma.material" type="Material" id=6]
 [ext_resource path="res://game/materials/player/player_red.material" type="Material" id=7]
 [ext_resource path="res://game/materials/player/player_blue.material" type="Material" id=8]
-[ext_resource path="res://game/scenes/gameplay.tscn" type="PackedScene" id=9]
-[ext_resource path="res://system/theme.tres" type="Theme" id=10]
-[ext_resource path="res://system/fonts/paragraph.tres" type="DynamicFont" id=11]
-[ext_resource path="res://system/corners.tscn" type="PackedScene" id=12]
-[ext_resource path="res://system/code/fps.gd" type="Script" id=13]
+[ext_resource path="res://game/models/text_ready.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://game/materials/metals/metalic.material" type="Material" id=10]
+[ext_resource path="res://game/models/text_set.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://game/models/test_play.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://game/scenes/gameplay.tscn" type="PackedScene" id=13]
+[ext_resource path="res://system/theme.tres" type="Theme" id=14]
+[ext_resource path="res://system/fonts/paragraph.tres" type="DynamicFont" id=15]
+[ext_resource path="res://system/corners.tscn" type="PackedScene" id=16]
+[ext_resource path="res://system/code/fps.gd" type="Script" id=17]
 
 [sub_resource type="Animation" id=1]
 
@@ -65,6 +69,16 @@ tracks/3/keys = {
 "args": [  ],
 "method": "start_game"
 } ]
+}
+tracks/4/type = "animation"
+tracks/4/path = NodePath("world/play/anim_play")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": PoolStringArray( "fade" ),
+"times": PoolRealArray( 7 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -142,6 +156,25 @@ bottom_radius = 1.0
 height = 7.0
 radial_segments = 64
 rings = 4
+
+[sub_resource type="Animation" id=7]
+
+resource_name = "fade"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -1.24, -36.729 ), Vector3( 0, -1.24, 8.121 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 
@@ -224,7 +257,6 @@ anims/demo = SubResource( 1 )
 blend_times = [  ]
 
 [node name="cameras" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="sky_camera" type="Camera" parent="cameras"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 27, 107 )
@@ -275,12 +307,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49748, -27, -107.151 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="totems" type="Position3D" parent="world"]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.22, 0 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Script", "Transform" ]
 
 [node name="red" type="Spatial" parent="world/totems"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.528, -1.33765, -28.701 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2821, -1.33765, -28.701 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Script", "Transform" ]
 
@@ -317,7 +350,7 @@ material/0 = ExtResource( 7 )
 _sections_unfolded = [ "Transform", "material", "mesh" ]
 
 [node name="blue" type="Spatial" parent="world/totems"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.855, -3.00699, -26.7412 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5299, -3.00699, -26.7412 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Script" ]
 
@@ -353,7 +386,64 @@ skeleton = NodePath("..")
 material/0 = ExtResource( 8 )
 _sections_unfolded = [ "material", "mesh" ]
 
-[node name="gameplay" parent="." instance=ExtResource( 9 )]
+[node name="ready" type="MeshInstance" parent="world"]
+transform = Transform( 4, 0, 0, 0, 3.93515, 0.717331, 0, -0.717331, 3.93515, -4, -10.0157, 210.463 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 9 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="set" type="MeshInstance" parent="world"]
+transform = Transform( 3.9972, 0, 0.14973, 0, 4, 0, -0.14973, 0, 3.9972, -37.0039, -3.41817, 31.4304 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 11 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="play" type="MeshInstance" parent="world"]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -1.24, -36.729 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 12 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="anim_play" type="AnimationPlayer" parent="world/play"]
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/fade = SubResource( 7 )
+blend_times = [  ]
+
+[node name="gameplay" parent="." instance=ExtResource( 13 )]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 20.6262, 78.1126 )
 
@@ -367,6 +457,7 @@ transform = Transform( 1, -5.35961e-09, 1.6653e-09, 0, 1, 1.49012e-08, 0, -1.490
 transform = Transform( 0.980869, -0.194671, 0, 0.194671, 0.980869, 0, 0, 0, 1, 21.4149, 0, 8.36314 )
 
 [node name="GUI" type="Control" parent="."]
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -377,7 +468,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 10 )
+theme = ExtResource( 14 )
 _sections_unfolded = [ "Rect", "Theme", "theme" ]
 __meta__ = {
 "_edit_lock_": true
@@ -414,7 +505,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 15 )
 text = "Version 2.0/alpha2"
 align = 1
 valign = 1
@@ -423,7 +514,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Custom Colors", "Custom Constants", "Custom Fonts", "custom_fonts", "custom_fonts/font" ]
 
-[node name="corners" parent="GUI" instance=ExtResource( 12 )]
+[node name="corners" parent="GUI" instance=ExtResource( 16 )]
 
 [node name="top" type="Control" parent="GUI"]
 anchor_left = 0.0
@@ -479,7 +570,7 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 13 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Script" ]
 
 [node name="overdraw" type="Control" parent="GUI"]
@@ -499,6 +590,8 @@ __meta__ = {
 }
 
 [node name="fade" type="ColorRect" parent="GUI/overdraw"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0

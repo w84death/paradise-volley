@@ -73,11 +73,9 @@ type = 4
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5, 6.55826, 0 )
 physics_material_override = SubResource( 3 )
 player_id = 0
-game_paused = true
 
 [node name="player_2" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 6.55826, 0 )
 physics_material_override = SubResource( 4 )
 bot = true
-game_paused = true
 

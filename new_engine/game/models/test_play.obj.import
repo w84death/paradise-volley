@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/test_play.obj-c3718c521a2c2a0faf178915e23cd04a.mesh"
+
+[deps]
+
+files=[ "res://.import/test_play.obj-c3718c521a2c2a0faf178915e23cd04a.mesh" ]
+
+source_file="res://game/models/test_play.obj"
+dest_files=[ "res://.import/test_play.obj-c3718c521a2c2a0faf178915e23cd04a.mesh", "res://.import/test_play.obj-c3718c521a2c2a0faf178915e23cd04a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
